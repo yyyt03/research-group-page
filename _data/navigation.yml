@@ -1,0 +1,15 @@
+main:
+  - title: 首页
+    url: /
+  - title: 课题组简介
+    url: /about/
+  - title: 研究方向
+    url: /research/
+  - title: 成员
+    url: /members/
+  - title: 新闻
+    url: /news/
+  - title: 项目
+    url: /projects/
+  - title: 联系方式
+    url: /contact/
