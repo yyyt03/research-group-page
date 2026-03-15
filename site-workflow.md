@@ -160,7 +160,7 @@
 
 ## 5. 第三步：定义每类内容的字段模板
 
-这一点非常关键。不要让维护者“自由发挥”写 Markdown，而是提前规定字段。
+这一步现在已经完成，三类内容的字段结构和模板都已经落到项目中。
 
 ### 成员条目建议字段
 
@@ -185,6 +185,13 @@
 - `leader`
 - `summary`
 - `status`
+
+### 已经落到项目里的文件
+
+- 字段说明文档：`content-schema.md`
+- 成员模板：`templates/member-template.md`
+- 新闻模板：`templates/news-template.md`
+- 项目模板：`templates/project-template.md`
 
 你真正要做的是：让大家以后只是“填表”，而不是“写代码”。
 
@@ -385,6 +392,7 @@ git push -u origin main
 10. 再做样式美化
 
 这会比一开始就纠结 CMS、主题、动画效果更稳，也更适合课题组网站这种长期维护型项目。
+
 
 
 
