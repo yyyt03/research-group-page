@@ -6,7 +6,7 @@
 
 - 主页还是默认的 `layout: home`
 - `about.markdown` 还是 Jekyll 自带说明
-- `_config.yml` 仍然是默认配置
+- `_config.yml` 已经更新为适合 GitHub Pages 的基础站点配置
 - 本地已经初始化 Git，但当前还没有连接到 GitHub 上的目标仓库
 
 这说明你下一步最重要的事情不是继续找插件，而是先把网站的 **结构、内容类型、发布方式** 定下来。
@@ -199,27 +199,37 @@
 
 ## 6. 第四步：修改 `_config.yml`
 
-你可以先把默认配置替换成适合课题组网站的基础信息。
+这一步现在已经完成，站点基础配置已经改成适合 GitHub Pages 课题组网站继续开发的版本。
 
-至少要改这些：
+### 已经修改的内容
 
 - `title`
+- `email`
 - `description`
 - `url`
 - `baseurl`
 - `lang`
 - `timezone`
-
-后面还可以补：
-
+- `github_username`
 - `collections`
-- 默认排序规则
-- 菜单配置
+- `defaults`
+- `exclude`
 
-这一步完成后，站点就从“Jekyll 示例”变成“你的项目”了。
+### 已经落到项目里的文件
+
+- 配置文件：`_config.yml`
+
+### 你还需要自己替换的占位值
+
+- `title`
+- `email`
+- `description`
+- `url` 里的 `your-username`
+- `github_username`
+
+这一步完成后，站点已经从“Jekyll 默认示例配置”进入“课题组网站基础配置”阶段。
 
 ---
-
 ## 7. 第五步：清理默认页面
 
 建议把起始模板里的默认内容尽快替换掉。
@@ -368,14 +378,13 @@ git push -u origin main
 
 如果你想按最小成本继续推进，下一步优先做这 3 件事：
 
-1. 把 `_config.yml` 的站点信息改成你自己的
+1. 替换默认的 `index.markdown` 和 `about.markdown` 内容
 2. 创建 `_members`、`_news`、`_projects` 和 `assets/uploads`
-3. 先写 1 条成员示例和 1 条新闻示例
+3. 先写 1 到 2 条成员、新闻、项目示例内容
 
-只要这三步完成，网站就已经从“Jekyll 示例工程”进入“课题组网站骨架搭建”阶段了。
+只要这三步完成，网站就会从“基础配置完成”进入“内容骨架成型”阶段。
 
 ---
-
 ## 15. 一个适合你的推进顺序
 
 可以直接按下面这条路线做：
@@ -392,6 +401,8 @@ git push -u origin main
 10. 再做样式美化
 
 这会比一开始就纠结 CMS、主题、动画效果更稳，也更适合课题组网站这种长期维护型项目。
+
+
 
 
 
