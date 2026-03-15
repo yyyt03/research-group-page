@@ -3,10 +3,10 @@ email: contact@example.com
 description: >-
   这里填写课题组简介，例如研究方向、单位和网站定位。
 baseurl: ""
-url: "https://your-username.github.io"
+url: "https://yyyt03.github.io"
 lang: zh-CN
 timezone: Asia/Shanghai
-github_username: "your-username"
+github_username: "yyyt03"
 
 theme: minima
 plugins:
@@ -53,4 +53,5 @@ defaults:
 exclude:
   - .jekyll-cache/
   - _site/
+
 

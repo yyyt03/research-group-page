@@ -1,18 +1,26 @@
 ---
 layout: page
-title: About
+title: 课题组简介
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+## 团队简介
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+这里填写课题组的正式介绍，例如所属学院、研究方向、团队定位和总体目标。
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+## 研究愿景
 
+可以在这里说明课题组希望解决的问题、长期关注的方向，以及希望形成的学术特色。
 
-[jekyll-organization]: https://github.com/jekyll
+## 团队构成
+
+建议后续在这里补充：
+
+- 导师信息
+- 博士生与硕士生
+- 已毕业成员
+- 合作研究人员
+
+## 网站说明
+
+本页当前是占位版本，后续可以根据课题组实际情况继续扩展成更完整的介绍页。

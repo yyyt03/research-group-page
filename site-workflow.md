@@ -2,14 +2,15 @@
 
 ## 1. 当前状态
 
-根据当前仓库内容，你现在已经完成了 **Jekyll 起始例程**，并且可以本地生成站点。当前项目还处在非常早期的模板阶段：
+根据当前仓库内容，你现在已经完成了前五步中的大部分基础工作：
 
-- 主页还是默认的 `layout: home`
-- `about.markdown` 还是 Jekyll 自带说明
+- 首页已经替换成课题组网站占位内容
+- `about.markdown` 已经替换成课题组简介占位内容
+- 已新增 `research.md` 和 `contact.md`
 - `_config.yml` 已经更新为适合 GitHub Pages 的基础站点配置
-- 本地已经初始化 Git，但当前还没有连接到 GitHub 上的目标仓库
+- 本地已经连接远程仓库，`main` 已经推送到 GitHub
 
-这说明你下一步最重要的事情不是继续找插件，而是先把网站的 **结构、内容类型、发布方式** 定下来。
+这说明网站已经从“Jekyll 默认示例”进入“课题组网站基础骨架完成”阶段。
 
 ---
 
@@ -19,8 +20,10 @@
 
 1. 先确定 GitHub Pages 的发布方式
 2. 再设计网站栏目和内容结构
-3. 然后把 Jekyll 默认模板替换成你自己的页面
-4. 最后接 GitHub 仓库和自动部署
+3. 然后定义结构化内容模板
+4. 再把站点配置改成适合 GitHub Pages 的版本
+5. 接着替换默认页面内容
+6. 最后逐步补内容、列表页和展示页
 
 也就是说，当前阶段的关键词不是“美化”，而是“搭骨架”。
 
@@ -28,88 +31,19 @@
 
 ## 3. 第一步：确定 GitHub Pages 方案
 
-你需要先决定网站挂载在哪种仓库上：
+你选择的是用户主页仓库方案：
 
-### 方案 A：用户 / 组织主页仓库
+- 仓库名：`yyyt03.github.io`
+- 访问地址：`https://yyyt03.github.io/`
+- `baseurl`：保持为空 `""`
 
-仓库名形如：
-
-- `<username>.github.io`
-- `<orgname>.github.io`
-
-特点：
-
-- 网址最干净
-- `baseurl` 通常可以留空 `""`
-- 很适合正式的课题组主页
-
-### 方案 B：普通项目仓库
-
-仓库名形如：
-
-- `lab-website`
-- `group-homepage`
-
-访问地址通常是：
-
-- `https://username.github.io/lab-website/`
-
-特点：
-
-- 创建更自由
-- 但 `_config.yml` 里的 `baseurl` 需要写成仓库名，例如 `/lab-website`
-
-### 推荐
-
-如果这是课题组正式网站，优先考虑：
-
-- 有 GitHub 组织就用 `<orgname>.github.io`
-- 个人先代管就用 `<username>.github.io`
-
-### 你现在要做什么
-
-如果你准备先完成这一步，可以直接按下面做：
-
-1. 登录 GitHub，点击右上角 `New repository`
-2. `Owner` 选择你准备托管网站的账号
-3. 仓库名填写成 `<你的用户名>.github.io`
-4. 如果你的 GitHub 用户名里有大写字母，仓库名要改成全小写
-5. 仓库可见性先选 `Public`
-6. 勾选 `Add README`
-7. 点击 `Create repository`
-
-### 建仓时要特别注意
-
-- 用户主页仓库名必须严格匹配 `<username>.github.io`
-- 一个账号通常只对应一个用户主页站点
-- 如果你以后是课题组正式组织站，再迁移到 `<orgname>.github.io` 也可以
-- 你现在这个 Jekyll 项目之后应该推送到这个新仓库里
-
-### 仓库建好以后，你本地要同步调整
-
-因为你准备使用 `<username>.github.io` 这种用户主页仓库，所以后面你的 `_config.yml` 应该按这个方向配置：
-
-- `url: https://<username>.github.io`
-- `baseurl: ""`
-
-也就是说，用户主页仓库和普通项目仓库最大的区别是：
-
-- 用户主页仓库通常不需要写仓库名到 `baseurl`
-- 访问地址会直接是 `https://<username>.github.io/`
-
-### 这一步完成的判定标准
-
-你可以用下面 3 条判断自己是不是已经完成第一步：
-
-- GitHub 上已经存在 `<username>.github.io` 仓库
-- 你可以正常打开这个仓库的主页
-- 你已经确认后续要把当前 Jekyll 项目推送到这个仓库
+这一方案适合正式主页，网址也更干净。
 
 ---
 
 ## 4. 第二步：先定网站栏目
 
-这一步现在已经定稿，栏目结构按下面执行。
+这一步已经定稿，栏目结构按下面执行。
 
 ### 固定页面
 
@@ -149,18 +83,11 @@
 - 栏目定稿文档：`site-structure.md`
 - 导航数据文件：`_data/navigation.yml`
 
-这样做的好处是：
-
-- 后续维护规则统一
-- 新成员、新新闻都可以按模板添加
-- 页面导航已经有了明确顺序
-- 将来就算加 CMS，也能直接沿用这套结构
-
 ---
 
 ## 5. 第三步：定义每类内容的字段模板
 
-这一步现在已经完成，三类内容的字段结构和模板都已经落到项目中。
+这一步已经完成，三类内容的字段结构和模板都已经落到项目中。
 
 ### 成员条目建议字段
 
@@ -193,13 +120,11 @@
 - 新闻模板：`templates/news-template.md`
 - 项目模板：`templates/project-template.md`
 
-你真正要做的是：让大家以后只是“填表”，而不是“写代码”。
-
 ---
 
 ## 6. 第四步：修改 `_config.yml`
 
-这一步现在已经完成，站点基础配置已经改成适合 GitHub Pages 课题组网站继续开发的版本。
+这一步已经完成，站点基础配置已经改成适合 GitHub Pages 课题组网站继续开发的版本。
 
 ### 已经修改的内容
 
@@ -224,35 +149,32 @@
 - `title`
 - `email`
 - `description`
-- `url` 里的 `your-username`
-- `github_username`
 
-这一步完成后，站点已经从“Jekyll 默认示例配置”进入“课题组网站基础配置”阶段。
+当前 `url` 和 `github_username` 已经同步到了你的远程仓库：
+
+- `url: https://yyyt03.github.io`
+- `github_username: yyyt03`
 
 ---
+
 ## 7. 第五步：清理默认页面
 
-建议把起始模板里的默认内容尽快替换掉。
+这一步已经完成，默认页面已经被替换成适合课题组网站继续填写的占位内容。
 
-当前最需要改的文件：
+### 已经落到项目里的文件
 
-- `index.markdown`
-- `about.markdown`
+- 首页：`index.markdown`
+- 课题组简介页：`about.markdown`
+- 研究方向页：`research.md`
+- 联系方式页：`contact.md`
 
-建议做法：
-
-- 首页改成课题组简介 + 最新新闻 + 成员入口
-- `about.markdown` 改成导师 / 团队介绍
-- 新增 `research.md`
-- 新增 `contact.md`
-
-这一步的目标不是完整，而是让网站打开后不再出现 Jekyll 默认文案。
+这一步的目标不是一次写完所有内容，而是让网站打开后不再出现 Jekyll 默认文案。
 
 ---
 
 ## 8. 第六步：建立 collections 和示例数据
 
-这是课题组网站最核心的一步。
+这是课题组网站最核心的一步，也是当前最值得继续推进的一步。
 
 建议建立这些目录：
 
@@ -267,7 +189,7 @@
 
 - `_members/pi.md`
 - `_members/student-a.md`
-- `_news/2026-03-14-site-setup.md`
+- `_news/2026-03-15-site-setup.md`
 - `_projects/project-1.md`
 
 有了示例数据后，你再写页面模板会容易很多，因为你已经知道数据长什么样。
@@ -310,33 +232,19 @@ bundle exec jekyll serve
 
 ## 11. 第九步：连接远程仓库并推送
 
-因为你现在已经有本地 Git 仓库，也已经在 GitHub 上创建了 `<username>.github.io` 仓库，所以这一步的重点变成：连接远程并推送代码。
+这一步已经完成：
 
-### 如果远程仓库还是空的
+- 本地仓库已连接 `origin`
+- `main` 已推送到 GitHub
+- 当前远程仓库地址为 `https://github.com/yyyt03/yyyt03.github.io.git`
 
-```bash
-git remote add origin <你的仓库地址>
-git branch -M main
-git push -u origin main
-```
-
-### 如果远程仓库已经有 README 初始提交
-
-这是你当前更可能遇到的情况。常见做法有两种：
-
-1. 保留远程 README，把两边历史合并
-2. 如果远程只有占位 README，也可以在确认无重要内容后直接覆盖远程
-
-较稳妥的合并流程如下：
+后续只需要继续保持：
 
 ```bash
-git remote add origin <你的仓库地址>
-git branch -M main
-git pull origin main --allow-unrelated-histories
-git push -u origin main
+git checkout main
+git merge --ff-only <功能分支>
+git push origin main
 ```
-
-如果后面 `git pull` 时出现冲突，通常就是 README 或 `.gitignore` 的初始差异，处理完再继续 push 即可。
 
 ---
 
@@ -378,32 +286,24 @@ git push -u origin main
 
 如果你想按最小成本继续推进，下一步优先做这 3 件事：
 
-1. 替换默认的 `index.markdown` 和 `about.markdown` 内容
-2. 创建 `_members`、`_news`、`_projects` 和 `assets/uploads`
-3. 先写 1 到 2 条成员、新闻、项目示例内容
+1. 创建 `_members`、`_news`、`_projects` 和 `assets/uploads`
+2. 先写 1 到 2 条成员、新闻、项目示例内容
+3. 开始做成员页、新闻页和项目页的列表展示
 
-只要这三步完成，网站就会从“基础配置完成”进入“内容骨架成型”阶段。
+只要这三步完成，网站就会从“页面骨架完成”进入“结构化内容开始上线”阶段。
 
 ---
+
 ## 15. 一个适合你的推进顺序
 
 可以直接按下面这条路线做：
 
-1. 选定 GitHub Pages 仓库方案
-2. 修改 `_config.yml`
-3. 删除或替换默认页面内容
-4. 建立 collections
-5. 补 2 到 4 条示例内容
-6. 做首页和成员页
-7. 本地预览
-8. 推送 GitHub
-9. 开启 Pages
-10. 再做样式美化
+1. 建立 collections 目录
+2. 补 2 到 4 条示例内容
+3. 做首页和成员页
+4. 本地预览
+5. 推送 GitHub
+6. 开启 Pages
+7. 再做样式美化
 
-这会比一开始就纠结 CMS、主题、动画效果更稳，也更适合课题组网站这种长期维护型项目。
-
-
-
-
-
-
+这会比一开始就纠结主题、动画效果或 CMS 更稳，也更适合课题组网站这种长期维护型项目。

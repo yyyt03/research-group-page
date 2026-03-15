@@ -1,6 +1,32 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-layout: home
+layout: page
+title: 首页
+permalink: /
 ---
+
+# 课题组网站
+
+这里可以放课题组的正式名称，以及一句简短的定位介绍，例如研究方向、所属单位和主要关注的问题。
+
+## 研究方向概览
+
+- 方向一：这里填写核心研究主题
+- 方向二：这里填写核心研究主题
+- 方向三：这里填写核心研究主题
+
+## 网站内容导航
+
+- [课题组简介](/about/)：查看团队介绍、研究愿景和发展方向
+- [研究方向](/research/)：查看课题组当前关注的研究主题
+- [联系方式](/contact/)：查看邮箱、地址和招生信息入口
+
+## 当前建设进度
+
+这个网站的基础结构已经搭好，接下来会继续补充：
+
+- 成员信息
+- 新闻动态
+- 项目介绍
+- 更完整的首页展示
+
+如果你正在用这个模板继续开发，建议下一步优先补充真实的课题组名称、简介和研究方向。
