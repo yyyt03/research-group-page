@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>考古微形态与实验考古实验室 | Archaeology Lab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['"Noto Serif SC"', 'serif'],
+                    },
+                    colors: {
+                        primary: '#2c3e50',
+                        secondary: '#8e44ad',
+                        accent: '#d35400',
+                        bglight: '#f8f9fa',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            scroll-behavior: smooth;
+        }
+        .hero-overlay {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-white antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-serif font-bold text-xl">A</div>
+                    <span class="font-serif font-bold text-xl text-primary tracking-wide">考古实验室</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-gray-600 hover:text-primary font-medium transition-colors">首页</a>
+                    <a href="#about" class="text-gray-600 hover:text-primary font-medium transition-colors">关于我们</a>
+                    <a href="#research" class="text-gray-600 hover:text-primary font-medium transition-colors">研究领域</a>
+                    <a href="#team" class="text-gray-600 hover:text-primary font-medium transition-colors">团队成员</a>
+                    <a href="#publications" class="text-gray-600 hover:text-primary font-medium transition-colors">学术成果</a>
+                    <a href="#contact" class="px-5 py-2.5 bg-primary text-white rounded-md hover:bg-opacity-90 transition-all font-medium">联系我们</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-primary focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-2 shadow-lg">
+                <a href="#home" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">首页</a>
+                <a href="#about" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">关于我们</a>
+                <a href="#research" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">研究领域</a>
+                <a href="#team" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">团队成员</a>
+                <a href="#contact" class="block px-3 py-3 text-base font-medium text-primary hover:bg-gray-50 rounded-md">联系我们</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://image.qwenlm.ai/public_source/9353c847-12e6-4af0-9c96-4a163f044fe8/160a0688d-b751-49c8-992b-5dbdb7a1c877.png" alt="Lab Background" class="w-full h-full object-cover">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto" data-aos="fade-up">
+            <span class="inline-block py-1 px-3 rounded-full bg-white/20 backdrop-blur-md text-white text-sm font-medium mb-6 border border-white/30">
+                探索过去的微观世界
+            </span>
+            <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6 leading-tight">
+                考古微形态与<br>实验考古实验室
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-light">
+                我们致力于通过先进的科学分析手段，解读人类历史遗留的微观痕迹，重建古代人类行为与环境互动。
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#research" class="px-8 py-4 bg-white text-primary font-semibold rounded-md hover:bg-gray-100 transition-all shadow-lg">
+                    探索研究
+                </a>
+                <a href="#about" class="px-8 py-4 bg-transparent border border-white text-white font-semibold rounded-md hover:bg-white/10 transition-all">
+                    了解更多
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-white opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-6">关于实验室</h2>
+                    <div class="w-20 h-1 bg-accent mb-8"></div>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                        本实验室依托于大学考古系建立，专注于<span class="font-semibold text-primary">土壤微形态学</span>、<span class="font-semibold text-primary">实验考古学</span>以及<span class="font-semibold text-primary">残留物分析</span>。
+                    </p>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                        我们的目标是通过跨学科的方法，将自然科学技术引入考古学研究，从微观层面揭示古代人类的生活方式、技术工艺以及环境适应策略。实验室配备了先进的偏光显微镜、扫描电镜以及实验考古操作台。
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="p-4 bg-bglight rounded-lg border-l-4 border-primary">
+                            <h4 class="font-bold text-primary text-xl mb-1">15+</h4>
+                            <p class="text-sm text-gray-500">年研究经验</p>
+                        </div>
+                        <div class="p-4 bg-bglight rounded-lg border-l-4 border-accent">
+                            <h4 class="font-bold text-primary text-xl mb-1">50+</h4>
+                            <p class="text-sm text-gray-500">国际合作项目</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-accent/10 rounded-full z-0"></div>
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Researcher working" class="relative z-10 rounded-lg shadow-xl w-full object-cover h-[500px]">
+                    <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-primary/5 rounded-full z-0"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Areas -->
+    <section id="research" class="py-20 bg-bglight">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">核心研究领域</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">结合传统考古学理论与现代科学技术，我们主要关注以下几个方向：</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm card-hover transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://image.qwenlm.ai/public_source/9353c847-12e6-4af0-9c96-4a163f044fe8/1fddb16db-0764-4b76-8c83-57db62580954.png" alt="Micromorphology" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">土壤微形态学</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            通过制作土壤薄片，在显微镜下观察沉积物的微观结构，重建遗址的形成过程及人类活动痕迹。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm card-hover transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Experimental Archaeology" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">实验考古学</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            通过模拟古代技术流程（如石器打制、陶器烧制），验证考古假设，理解古代工匠的技术选择。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm card-hover transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Residue Analysis" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-green-100 text-green-600 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">残留物分析</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            提取并分析陶器、石器表面的淀粉粒、植硅体及脂质残留，复原古代人类的饮食结构与资源利用。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">研究团队</h2>
+                <p class="text-gray-600">汇聚多学科背景的专家学者</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Member 1 -->
+                <div class="group text-center">
+                    <div class="relative mb-6 overflow-hidden rounded-lg shadow-md">
+                        <img src="https://image.qwenlm.ai/public_source/9353c847-12e6-4af0-9c96-4a163f044fe8/1b160810c-50b3-4c98-b513-d978886f8f88.png" alt="Professor" class="w-full h-80 object-cover object-top transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-white hover:text-accent"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900">李华 教授</h3>
+                    <p class="text-accent font-medium mb-2">实验室主任 / 微形态学专家</p>
+                    <p class="text-gray-500 text-sm">专注于新石器时代遗址微形态分析及古代农业起源研究。</p>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="group text-center">
+                    <div class="relative mb-6 overflow-hidden rounded-lg shadow-md">
+                        <img src="https://image.qwenlm.ai/public_source/9353c847-12e6-4af0-9c96-4a163f044fe8/1b23c52c5-9420-461a-b80e-62ef25e9b1c9.png" alt="Researcher" class="w-full h-80 object-cover object-top transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-white hover:text-accent"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900">张伟 副教授</h3>
+                    <p class="text-accent font-medium mb-2">实验考古学负责人</p>
+                    <p class="text-gray-500 text-sm">主要研究旧石器时代石器技术演变及打制实验模拟。</p>
+                </div>
+
+                 <!-- Member 3 (Placeholder using generic style) -->
+                 <div class="group text-center">
+                    <div class="relative mb-6 overflow-hidden rounded-lg shadow-md bg-gray-100 flex items-center justify-center h-80">
+                        <div class="text-center p-6">
+                            <div class="w-20 h-20 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center text-gray-500">
+                                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">王芳 博士</h3>
+                            <p class="text-accent font-medium mb-2">博士后研究员</p>
+                            <p class="text-gray-500 text-sm">专注于植物考古与残留物分析。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Preview -->
+    <section id="publications" class="py-20 bg-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">最新学术成果</h2>
+                    <p class="text-gray-300 max-w-xl">我们在国际顶级期刊上发表的多篇关于古代技术与环境的研究论文。</p>
+                </div>
+                <a href="#" class="hidden md:inline-flex items-center text-white hover:text-accent transition-colors mt-4 md:mt-0 font-medium">
+                    查看全部出版物 
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/10 hover:bg-white/20 transition-colors">
+                    <span class="text-xs font-bold text-accent uppercase tracking-wider">Journal of Archaeological Science</span>
+                    <h3 class="text-lg font-bold mt-2 mb-2">Micro-morphological analysis of hearth features in Neolithic settlements</h3>
+                    <p class="text-gray-300 text-sm mb-4">Li, H., Zhang, W., et al. (2023)</p>
+                    <a href="#" class="text-sm underline decoration-accent decoration-2 underline-offset-4 hover:text-accent">阅读摘要</a>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/10 hover:bg-white/20 transition-colors">
+                    <span class="text-xs font-bold text-accent uppercase tracking-wider">Antiquity</span>
+                    <h3 class="text-lg font-bold mt-2 mb-2">Experimental replication of Paleolithic stone tools: A functional perspective</h3>
+                    <p class="text-gray-300 text-sm mb-4">Zhang, W., Smith, J. (2023)</p>
+                    <a href="#" class="text-sm underline decoration-accent decoration-2 underline-offset-4 hover:text-accent">阅读摘要</a>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center md:hidden">
+                <a href="#" class="inline-flex items-center text-white hover:text-accent transition-colors font-medium">
+                    查看全部出版物 
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-bglight">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-8">加入我们</h2>
+            <p class="text-gray-600 mb-12 text-lg">
+                我们欢迎对考古科学感兴趣的本科生、研究生及访问学者加入我们的团队。如有合作意向或咨询，请通过以下方式联系我们。
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="font-bold text-primary mb-2">地址</h4>
+                    <p class="text-gray-600 text-sm">某某大学 考古文博学院<br>实验楼 305 室</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="font-bold text-primary mb-2">邮箱</h4>
+                    <p class="text-gray-600 text-sm">contact@archaeolab.edu.cn<br>admission@archaeolab.edu.cn</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="font-bold text-primary mb-2">电话</h4>
+                    <p class="text-gray-600 text-sm">+86 10 1234 5678<br>(工作日 9:00 - 17:00)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <span class="font-serif font-bold text-2xl tracking-wide mb-4 block">考古实验室</span>
+                    <p class="text-gray-400 text-sm max-w-xs">
+                        致力于通过微观视角解读人类历史，推动考古学的科学化发展。
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-gray-300">快速链接</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#home" class="hover:text-white transition-colors">首页</a></li>
+                        <li><a href="#research" class="hover:text-white transition-colors">研究领域</a></li>
+                        <li><a href="#team" class="hover:text-white transition-colors">团队成员</a></li>
+                        <li><a href="#publications" class="hover:text-white transition-colors">出版物</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-gray-300"> affiliated</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>某某大学考古系</li>
+                        <li>人类演化实验室</li>
+                        <li>文化遗产保护中心</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2023 考古微形态与实验考古实验室。All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white">隐私政策</a>
+                    <a href="#" class="hover:text-white">使用条款</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.replace('h-20', 'h-16');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.replace('h-16', 'h-20');
+            }
+        });
+    </script>
+</body>
+</html>
+

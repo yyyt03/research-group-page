@@ -38,7 +38,7 @@ defaults:
       path: ""
       type: members
     values:
-      layout: page
+      layout: member
   - scope:
       path: ""
       type: news
@@ -54,4 +54,5 @@ exclude:
   - .jekyll-cache/
   - _site/
   - docs/
+
 

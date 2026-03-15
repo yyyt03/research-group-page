@@ -1,32 +1,25 @@
-<header class="site-shell" role="banner">
-  <div class="site-shell__meta">
-    <div class="wrapper site-shell__meta-inner">
-      <div class="site-shell__meta-left">
-        <span>Wuhan University</span>
-        <span>School of History</span>
-      </div>
-      <div class="site-shell__meta-right">
-        <a href="{{ '/contact/' | relative_url }}">Contact</a>
-        <span>{{ site.github_username }}</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="wrapper site-shell__main">
-    <a class="site-brand" rel="author" href="{{ '/' | relative_url }}">
-      <span class="site-brand__eyebrow">Digital Humanities</span>
-      <span class="site-brand__title">{{ site.title }}</span>
+<header class="lab-header" role="banner">
+  <div class="wrapper lab-header__inner">
+    <a class="lab-brand" rel="author" href="{{ '/' | relative_url }}">
+      <span class="lab-brand__mark">A</span>
+      <span class="lab-brand__text">{{ site.title }}</span>
     </a>
 
-    <nav class="site-navigation" aria-label="主导航">
-      <ul class="site-menu">
+    <button class="lab-nav-toggle" type="button" aria-expanded="false" aria-label="切换导航菜单" data-nav-toggle>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="lab-nav" aria-label="主导航">
+      <ul class="lab-nav__list" data-nav-panel>
         {% for item in site.data.navigation.main %}
           {% assign current = false %}
           {% if page.url == item.url %}
             {% assign current = true %}
           {% endif %}
-          <li class="site-menu__item">
-            <a class="site-menu__link{% if current %} is-active{% endif %}" href="{{ item.url | relative_url }}"{% if current %} aria-current="page"{% endif %}>{{ item.title }}</a>
+          <li>
+            <a class="lab-nav__link{% if current %} is-current{% endif %}{% if forloop.last %} lab-nav__link--button{% endif %}" href="{{ item.url | relative_url }}"{% if current %} aria-current="page"{% endif %}>{{ item.title }}</a>
           </li>
         {% endfor %}
       </ul>

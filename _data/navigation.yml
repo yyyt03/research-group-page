@@ -1,15 +1,13 @@
 main:
   - title: 首页
     url: /
-  - title: 课题组简介
+  - title: 关于我们
     url: /about/
-  - title: 研究方向
+  - title: 研究领域
     url: /research/
-  - title: 成员
+  - title: 团队成员
     url: /members/
-  - title: 新闻
+  - title: 学术成果
     url: /news/
-  - title: 项目
-    url: /projects/
-  - title: 联系方式
+  - title: 联系我们
     url: /contact/

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'zh-CN' }}">
+  <head>
+    {%- include head.html -%}
+  </head>
+  <body class="lab-body{% if page.url == '/' %} lab-body--home{% endif %}">
+    {%- include header.html -%}
+
+    <main class="site-main" aria-label="Content">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer-lab">
+      <div class="wrapper footer-grid">
+        <section>
+          <h2 class="footer-brand">{{ site.title }}</h2>
+          <p class="footer-copy">致力于通过微观视角解读人类历史，推动考古学与历史研究的科学化发展。</p>
+        </section>
+        <section>
+          <h3 class="footer-heading">快速链接</h3>
+          <ul class="footer-links">
+            {% for item in site.data.navigation.main %}
+            <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+            {% endfor %}
+            <li><a href="{{ '/projects/' | relative_url }}">项目介绍</a></li>
+          </ul>
+        </section>
+        <section>
+          <h3 class="footer-heading">affiliated</h3>
+          <ul class="footer-links">
+            <li>武汉大学历史学院</li>
+            <li>中国传统文化研究中心</li>
+            <li>长江文明考古研究</li>
+          </ul>
+        </section>
+      </div>
+      <div class="wrapper footer-bottom">
+        <p>&copy; 2026 {{ site.title }}. All rights reserved.</p>
+        <div class="footer-bottom__links">
+          <a href="{{ '/contact/' | relative_url }}">联系我们</a>
+          <a href="{{ '/about/' | relative_url }}">关于我们</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const navToggle = document.querySelector('[data-nav-toggle]');
+      const navPanel = document.querySelector('[data-nav-panel]');
+
+      if (navToggle && navPanel) {
+        navToggle.addEventListener('click', () => {
+          const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+          navToggle.setAttribute('aria-expanded', String(!expanded));
+          navPanel.classList.toggle('is-open');
+        });
+      }
+    </script>
+  </body>
+</html>
