@@ -1,0 +1,113 @@
+media:
+  input: assets/uploads
+  output: /assets/uploads
+
+content:
+  - name: members
+    label: 团队成员
+    type: collection
+    path: _members
+    format: yaml-frontmatter
+    subfolders: false
+    fields:
+      - name: name
+        label: 姓名
+        type: string
+        required: true
+      - name: role
+        label: 职称/身份
+        type: string
+      - name: photo
+        label: 照片
+        type: image
+      - name: research
+        label: 研究方向
+        type: text
+      - name: email
+        label: 邮箱
+        type: string
+      - name: order
+        label: 排序
+        type: number
+      - name: body
+        label: 详细介绍
+        type: rich-text
+
+  - name: news
+    label: 新闻成果
+    type: collection
+    path: _news
+    format: yaml-frontmatter
+    subfolders: false
+    fields:
+      - name: title
+        label: 标题
+        type: string
+        required: true
+      - name: date
+        label: 日期
+        type: date
+      - name: cover
+        label: 封面图
+        type: image
+      - name: summary
+        label: 摘要
+        type: text
+      - name: body
+        label: 正文
+        type: rich-text
+
+  - name: projects
+    label: 项目
+    type: collection
+    path: _projects
+    format: yaml-frontmatter
+    subfolders: false
+    fields:
+      - name: title
+        label: 项目名称
+        type: string
+        required: true
+      - name: period
+        label: 周期
+        type: string
+      - name: leader
+        label: 负责人
+        type: string
+      - name: summary
+        label: 简介
+        type: text
+      - name: status
+        label: 状态
+        type: select
+        options:
+          values: [ongoing, completed]
+      - name: body
+        label: 详情
+        type: rich-text
+
+  - name: about
+    label: 固定页-关于
+    type: file
+    path: pages/about.markdown
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: 标题
+        type: string
+      - name: body
+        label: 正文
+        type: rich-text
+
+  - name: contact
+    label: 固定页-联系
+    type: file
+    path: pages/contact.md
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: 标题
+        type: string
+      - name: body
+        label: 正文
+        type: rich-text

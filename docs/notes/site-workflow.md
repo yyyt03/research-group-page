@@ -63,3 +63,7 @@ git push origin main
 ## 子页面专项优化
 
 详见：`docs/notes/subpage-optimization-plan.md`
+
+## 部署与 CMS 决策
+
+详见：`docs/notes/deploy-and-cms-plan.md`
