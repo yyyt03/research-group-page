@@ -5,75 +5,94 @@
 ### 站点配置
 
 - `_config.yml`
-  站点总配置。控制站点标题、GitHub Pages 地址、语言、时区、collections、默认 layout 与排除目录。
+  站点总配置。控制站点标题、域名、collections、默认 layout、插件与构建行为。
+- `.pages.yml`
+  Pages CMS 配置文件。当前建议只管理结构化集合内容，不直接在 CMS 中编辑固定页面模板。
 
-### 页面源码（已归档）
+### 页面源码
 
 - `pages/`
-  页面类文件统一放在这里，方便管理。
+  固定页面统一放在这里，方便维护页面结构与样式。
 
 当前包含：
 
 - `pages/index.markdown`（首页）
 - `pages/about.markdown`（关于我们）
-- `pages/research.md`（研究领域）
+- `pages/research.md`（研究方向）
 - `pages/contact.md`（联系方式）
-- `pages/members.md`（成员列表）
-- `pages/news.md`（学术成果/新闻列表）
+- `pages/members.md`（团队成员列表）
+- `pages/news.md`（学术成果列表）
 - `pages/projects.md`（项目列表）
 - `pages/404.html`（404 页面）
 
-这些页面都使用 `permalink`，所以移动目录后线上 URL 不变。
+这些页面都通过 `permalink` 暴露访问路径，所以目录整理不会改变线上 URL。
 
 ### 导航与布局
 
 - `_data/navigation.yml`
   控制主导航顺序和入口。
 - `_includes/header.html`
-  控制顶部导航结构。
+  控制顶部导航结构、桌面与移动端导航按钮。
 - `_includes/head.html`
-  控制 `<head>` 元信息与样式链接。
+  控制页面元信息和样式资源引用。
 - `_layouts/default.html`
-  全站外壳布局（页头、页脚、移动端菜单脚本）。
+  全站外壳布局。
 - `_layouts/page.html`
   普通页面布局。
 - `_layouts/member.html`
   成员详情页布局。
 - `_layouts/news-item.html`
-  新闻详情页布局。
+  学术成果详情页布局。
 - `_layouts/project-item.html`
   项目详情页布局。
 
 ### 样式与资源
 
 - `assets/main.scss`
-  全站样式（含桌面/移动端适配、详情页样式）。
+  全站样式主文件，包含首页、列表页、详情页、移动端与夜间模式样式。
 - `assets/uploads/members/`
   成员照片。
 - `assets/uploads/news/`
-  新闻配图。
+  学术成果封面与正文插图。
 - `assets/uploads/projects/`
-  项目配图。
+  项目图片。
 - `assets/uploads/site/`
-  首页与固定页面共用素材图。
+  首页与固定页面共用图片资源。
 
 ### 结构化内容
 
 - `_members/*.md`
-  成员数据。
+  成员资料。适合长期通过 Pages CMS 维护。
 - `_news/*.md`
-  新闻数据。
+  学术成果/新闻条目。适合长期通过 Pages CMS 维护。
 - `_projects/*.md`
-  项目数据。
+  项目条目。适合长期通过 Pages CMS 维护。
 
 ### 模板与文档
 
 - `templates/`
-  成员/新闻/项目模板。
+  内容模板。
 - `docs/notes/`
-  项目流程和记录文档。
+  项目流程、部署、CMS 使用与维护记录。
 - `docs/references/`
-  参考页面和素材（如 `example_code.html`）。
+  参考页面与样式素材。
+
+## 当前推荐的 CMS 管理边界
+
+适合放进 Pages CMS 的内容：
+
+- `_members/`
+- `_news/`
+- `_projects/`
+
+不建议直接放进 Pages CMS 富文本编辑的内容：
+
+- `pages/index.markdown`
+- `pages/about.markdown`
+- `pages/research.md`
+- `pages/contact.md`
+
+原因：这些固定页面已经包含较多模板化结构、分区 HTML 和样式挂钩字段，直接用 CMS 富文本编辑容易破坏页面结构。
 
 ## 常见修改场景
 
@@ -85,7 +104,7 @@
 
 改 `_includes/header.html` 和 `assets/main.scss`。
 
-### 想改首页内容
+### 想改首页内容与结构
 
 改 `pages/index.markdown`。
 
@@ -100,34 +119,33 @@
 ### 想改详情页样式
 
 - 成员详情：改 `_layouts/member.html` 和 `assets/main.scss` 中 `member-detail` 相关样式。
-- 新闻详情：改 `_layouts/news-item.html` 和 `assets/main.scss` 中 `detail-shell` 相关样式。
+- 学术成果详情：改 `_layouts/news-item.html` 和 `assets/main.scss` 中 `detail-shell` 相关样式。
 - 项目详情：改 `_layouts/project-item.html` 和 `assets/main.scss` 中 `detail-shell` 相关样式。
 
 ### 想新增成员
 
 1. 在 `_members/` 复制一个现有成员文件。
-2. 修改 `name`、`role`、`photo`、`research`、`email`、`order`。
+2. 修改 `name`、`role`、`photo`、`research`、`email`、`order` 等字段。
 3. 把图片放进 `assets/uploads/members/`。
 
-### 想修成员图片不显示
+### 想新增学术成果
 
-按这个顺序检查：
+1. 在 `_news/` 新建一篇 Markdown 文件。
+2. 填写 `title`、`date`、`cover`、`summary`。
+3. 在正文中继续写内容，正文可以插入多张图片。
+4. 配图放进 `assets/uploads/news/`。
 
-1. 图片文件是否在 `assets/uploads/members/`。
-2. 成员 Markdown 中 `photo` 路径是否正确。
-3. `pages/members.md` 和 `_layouts/member.html` 是否渲染了 `photo`。
+### 想新增项目
 
-### 想排查子页面图片不显示
+1. 在 `_projects/` 新建 Markdown 文件。
+2. 填写 `title`、`period`、`leader`、`summary`、`status`。
+3. 在正文中补充项目详情。
 
-按这个顺序检查：
-
-1. 引用路径是否是站内路径（例如 `/assets/uploads/news/site-setup.jpg`）。
-2. 图片是否真实存在于仓库对应目录。
-3. Jekyll 是否本地构建通过（`bundle exec jekyll build`）。
-
-## 发布流程
+## 本地检查与发布流程
 
 ```bash
+bundle exec jekyll serve --livereload
+bundle exec jekyll build
 git checkout main
 git merge --ff-only <功能分支>
 git push origin main
@@ -135,9 +153,7 @@ git push origin main
 
 如果本地正常、线上异常，优先检查：
 
-1. 最新改动是否已进入 `main`。
-2. GitHub Pages 是否完成重新构建。
+1. 最新改动是否已经进入 `main`。
+2. Cloudflare Pages 或 GitHub Pages 是否完成重新构建。
 3. 浏览器是否需要强制刷新（`Ctrl + F5`）。
-
-
-
+4. 关键资源路径是否正常：`/assets/main.css`、`/assets/uploads/*`、集合详情页链接。

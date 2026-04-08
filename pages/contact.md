@@ -3,26 +3,23 @@ layout: default
 title: 联系方式
 permalink: /contact/
 ---
-<section class="section-block section-block--soft">
+<section class="page-shell page-shell--institutional">
   <div class="wrapper">
-    <div class="section-header">
-      <p class="section-kicker">联系我们</p>
-      <h1 class="section-title">加入我们</h1>
-      <p class="section-intro">我们欢迎对历史研究、考古科学与数字人文学术展示感兴趣的学生、研究者及合作伙伴与我们取得联系。</p>
-    </div>
+    <header class="page-masthead">
+      <p class="section-kicker">Contact</p>
+      <h1 class="section-title section-title--left">加入我们</h1>
+      <p class="section-intro section-intro--wide">欢迎对考古学、实验考古、科技分析及区域比较研究感兴趣的学生、研究者与合作机构取得联系。</p>
+    </header>
 
-    <div class="contact-grid">
+    <div class="contact-grid contact-grid--institutional">
       <article class="contact-card">
-        <strong>地址</strong>
-        <p>武汉大学历史学院<br>这里可继续补充办公地点与通信地址</p>
+        <strong>办公地址</strong>
+        <p>武汉大学历史学院<br>后续可继续补充研究中心办公室与通信地址。</p>
       </article>
       <article class="contact-card">
-        <strong>邮箱</strong>
-        <p>lyhfrance2005@yahoo.fr<br>建议合作与招生咨询优先使用邮件联系</p>
+        <strong>联系邮箱</strong>
+        <p>lyhfrance2005@yahoo.fr<br>合作、招生与资料咨询优先通过邮件联系。</p>
       </article>
     </div>
   </div>
 </section>
-
-
-

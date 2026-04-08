@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: 'zh-CN' }}">
   {%- include head.html -%}
-  <body class="lab-body{% if page.url == '/' %} lab-body--home{% endif %}">
+  <body class="lab-body{% if page.url == '/' %} lab-body--home{% endif %}" data-theme="light">
     {%- include header.html -%}
 
     <main class="site-main" aria-label="Content">
@@ -9,26 +9,27 @@
     </main>
 
     <footer class="site-footer-lab">
-      <div class="wrapper footer-grid">
-        <section>
+      <div class="wrapper site-footer-lab__top">
+        <section class="site-footer-lab__intro">
+          <p class="site-footer-lab__kicker">Research Center</p>
           <h2 class="footer-brand">{{ site.title }}</h2>
-          <p class="footer-copy">致力于通过微观视角解读人类历史，推动考古学与历史研究的科学化发展。</p>
+          <p class="footer-copy">围绕考古学、实验考古与微观分析方法，建设一个持续更新的研究信息窗口，用于展示成员、项目、成果与合作动态。</p>
         </section>
         <section>
-          <h3 class="footer-heading">快速链接</h3>
+          <h3 class="footer-heading">栏目导航</h3>
           <ul class="footer-links">
             {% for item in site.data.navigation.main %}
             <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
             {% endfor %}
-            <li><a href="{{ '/projects/' | relative_url }}">项目介绍</a></li>
           </ul>
         </section>
         <section>
-          <h3 class="footer-heading">affiliated</h3>
-          <ul class="footer-links">
-            <li>武汉大学历史学院</li>
-            <li>中国传统文化研究中心</li>
-            <li>长江文明考古研究</li>
+          <h3 class="footer-heading">研究关键词</h3>
+          <ul class="footer-links footer-links--plain">
+            <li>石器技术研究</li>
+            <li>实验考古</li>
+            <li>微形态分析</li>
+            <li>区域比较研究</li>
           </ul>
         </section>
       </div>
@@ -42,10 +43,32 @@
     </footer>
 
     <script>
+      const root = document.body;
       const navToggle = document.querySelector('[data-nav-toggle]');
       const navPanel = document.querySelector('[data-nav-panel]');
       const navLinks = navPanel ? navPanel.querySelectorAll('a') : [];
       const desktopMedia = window.matchMedia('(min-width: 901px)');
+      const themeToggle = document.querySelector('[data-theme-toggle]');
+      const storedTheme = localStorage.getItem('lab-theme');
+
+      const applyTheme = (theme) => {
+        const resolved = theme === 'dark' ? 'dark' : 'light';
+        root.dataset.theme = resolved;
+        if (themeToggle) {
+          themeToggle.setAttribute('aria-pressed', String(resolved === 'dark'));
+          themeToggle.setAttribute('aria-label', resolved === 'dark' ? '切换到日间模式' : '切换到夜间模式');
+        }
+      };
+
+      applyTheme(storedTheme || 'light');
+
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+          const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+          localStorage.setItem('lab-theme', nextTheme);
+          applyTheme(nextTheme);
+        });
+      }
 
       if (navToggle && navPanel) {
         const closeNav = () => {
@@ -93,4 +116,3 @@
     </script>
   </body>
 </html>
-

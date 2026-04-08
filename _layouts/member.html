@@ -1,9 +1,9 @@
 ---
 layout: default
 ---
-<article class="page-shell page-shell--member-detail">
+<article class="page-shell page-shell--member-detail institution-detail-shell">
   <div class="wrapper">
-    <section class="member-detail">
+    <section class="member-detail institution-detail">
       <div class="member-detail__grid{% unless page.photo %} member-detail__grid--no-photo{% endunless %}">
         {% if page.photo %}
         <figure class="member-detail__photo">
@@ -11,7 +11,7 @@ layout: default
         </figure>
         {% endif %}
 
-        <header class="member-detail__summary">
+        <header class="member-detail__summary institution-detail__summary">
           <p class="section-kicker">团队成员</p>
           <h1 class="member-detail__name">{{ page.name }}</h1>
           {% if page.role %}
@@ -25,7 +25,7 @@ layout: default
           {% endif %}
         </header>
 
-        <section class="member-detail__content">
+        <section class="member-detail__content institution-detail__content">
           {{ content }}
         </section>
       </div>
@@ -34,4 +34,3 @@ layout: default
     </section>
   </div>
 </article>
-

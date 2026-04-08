@@ -1,18 +1,17 @@
-# 课题组网站流程状态（更新于 2026-03-19）
+# 课题组网站流程状态（更新于 2026-04-08）
 
 ## 当前状态
 
-项目已完成从 Jekyll 初始模板到“可对外浏览版本”的核心工作：
+项目当前已经进入“可持续维护”阶段：
 
-- GitHub Pages 已启用，站点部署链路可用。
-- 导航、首页、关于页、研究页、成员页、新闻页、项目页已搭建。
-- `_members`、`_news`、`_projects` 已接入并可渲染。
-- 成员/新闻/项目详情页已使用独立布局并完成一轮样式统一。
-- 页面引用图片已优先本地化到 `assets/uploads/`，避免外链失效。
-- 已完成一轮移动端适配修复。
-- 页面源码已集中归档到 `pages/`，文档参考素材归档到 `docs/references/`。
+- 站点已完成 Jekyll 基础搭建，并已部署到 Cloudflare Pages。
+- GitHub 仓库继续作为源码主仓库，`main` 作为发布分支。
+- 首页、关于页、研究页、成员页、学术成果页、项目页均已完成一轮研究中心风格统一。
+- 桌面端与移动端样式已做多轮适配，夜间模式也已接入并持续修正对比度问题。
+- `_members`、`_news`、`_projects` 已作为主要结构化内容源使用。
+- Pages CMS 已接入仓库，当前最适合用于维护成员、学术成果、项目三类集合内容。
 
-## 目录规范（当前执行）
+## 当前目录规范
 
 - 页面源码：`pages/`
 - 结构化内容：`_members/`、`_news/`、`_projects/`
@@ -20,10 +19,30 @@
 - 过程文档：`docs/notes/`
 - 参考素材：`docs/references/`
 
+## 当前推荐维护方式
+
+### 适合在 Pages CMS 中维护
+
+- `_members/`
+- `_news/`
+- `_projects/`
+
+### 适合在本地直接维护
+
+- `pages/index.markdown`
+- `pages/about.markdown`
+- `pages/research.md`
+- `pages/contact.md`
+- `assets/main.scss`
+- `_layouts/*.html`
+- `_includes/*.html`
+
+原因：固定页面与布局文件已经和当前样式系统强绑定，使用 CMS 富文本直接编辑容易破坏结构与展示。
+
 ## 日常维护流程
 
 1. 新建功能分支。
-2. 修改页面或数据内容。
+2. 修改页面、样式或集合内容。
 3. 本地预览检查：
 
 ```bash
@@ -36,38 +55,36 @@ bundle exec jekyll serve --livereload
 bundle exec jekyll build
 ```
 
-5. 合并发布：
+5. 提交并推送当前分支。
+6. 确认 Cloudflare Pages 自动部署成功。
+7. 合并到 `main` 后再次确认线上页面。
 
-```bash
-git checkout main
-git merge --ff-only <功能分支>
-git push origin main
-```
+## 当前 Pages CMS 使用建议
 
-## 下一步建议（按优先级）
+1. 成员资料维护走 `_members/`。
+2. 学术成果维护走 `_news/`，支持封面图和正文插图。
+3. 项目维护走 `_projects/`。
+4. 固定页面暂不建议交给 CMS 直接编辑。
 
-1. 把首页与各页面示例文案替换为真实课题组内容。
-2. 持续补齐成员照片、新闻配图、项目封面并统一图片尺寸。
-3. 增加成果数据结构（可新增 `publications`）以替代新闻页占位逻辑。
-4. 做一轮 SEO 与可访问性优化（标题、描述、语义标签、移动端可读性）。
+## 当前优先任务
+
+1. 继续补齐真实成员资料、项目与学术成果内容。
+2. 继续检查全站夜间模式下的低对比度场景。
+3. 逐步补充 SEO 基础信息与页面摘要。
+4. 如果后续要让非技术成员高频维护内容，继续细化 `.pages.yml` 字段说明。
 
 ## 发布排查清单
 
 线上看起来异常时，按顺序检查：
 
-1. 代码是否已进入 `main` 并成功推送。
-2. GitHub Pages 构建是否完成。
-3. 浏览器缓存是否清理（强制刷新）。
-4. 关键路径是否正确：`/assets/main.css`、`/assets/uploads/*`、集合详情页链接。
+1. 当前改动是否已经推送到远程正确分支。
+2. Cloudflare Pages 最近一次部署是否为 `Success`。
+3. 浏览器缓存是否已清理。
+4. 关键资源路径是否正常：`/assets/main.css`、`/assets/uploads/*`。
+5. `bundle exec jekyll build` 本地是否通过。
 
-## 子页面专项优化
+## 相关文档
 
-详见：`docs/notes/subpage-optimization-plan.md`
-
-## 部署与 CMS 决策
-
-详见：`docs/notes/deploy-and-cms-plan.md`
-
-## 域名维护
-
-详见：`docs/notes/cloudflare-domain-change.md`
+- Cloudflare 域名维护：`docs/notes/cloudflare-domain-change.md`
+- CMS 图片使用：`docs/notes/cms-academic-content-images.md`
+- 仓库结构说明：`docs/repository-guide.md`
