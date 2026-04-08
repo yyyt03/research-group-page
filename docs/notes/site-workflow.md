@@ -9,11 +9,12 @@
 - 首页、关于页、研究页、成员页、学术成果页、项目页均已完成一轮研究中心风格统一。
 - 桌面端与移动端样式已做多轮适配，夜间模式也已接入并持续修正对比度问题。
 - `_members`、`_news`、`_projects` 已作为主要结构化内容源使用。
-- Pages CMS 已接入仓库，当前最适合用于维护成员、学术成果、项目三类集合内容。
+- 固定页面已开始改为“模板 + 数据”模式，准备由 Pages CMS 安全维护文案与图片。
 
 ## 当前目录规范
 
-- 页面源码：`pages/`
+- 页面模板：`pages/`
+- 固定页数据：`_data/page_content/`
 - 结构化内容：`_members/`、`_news/`、`_projects/`
 - 图片资源：`assets/uploads/`
 - 过程文档：`docs/notes/`
@@ -26,6 +27,10 @@
 - `_members/`
 - `_news/`
 - `_projects/`
+- `_data/page_content/home.yml`
+- `_data/page_content/about.yml`
+- `_data/page_content/research.yml`
+- `_data/page_content/contact.yml`
 
 ### 适合在本地直接维护
 
@@ -37,12 +42,12 @@
 - `_layouts/*.html`
 - `_includes/*.html`
 
-原因：固定页面与布局文件已经和当前样式系统强绑定，使用 CMS 富文本直接编辑容易破坏结构与展示。
+原因：页面模板与布局文件已经和当前样式系统强绑定，CMS 只编辑数据层，不直接改模板结构。
 
 ## 日常维护流程
 
 1. 新建功能分支。
-2. 修改页面、样式或集合内容。
+2. 修改页面模板、样式或集合/数据内容。
 3. 本地预览检查：
 
 ```bash
@@ -64,14 +69,15 @@ bundle exec jekyll build
 1. 成员资料维护走 `_members/`。
 2. 学术成果维护走 `_news/`，支持封面图和正文插图。
 3. 项目维护走 `_projects/`。
-4. 固定页面暂不建议交给 CMS 直接编辑。
+4. 固定页面文案与图片维护走 `_data/page_content/`。
+5. 固定页面模板本身不建议交给 CMS 直接编辑。
 
 ## 当前优先任务
 
-1. 继续补齐真实成员资料、项目与学术成果内容。
+1. 检查 Pages CMS 中固定页数据入口是否显示正常。
 2. 继续检查全站夜间模式下的低对比度场景。
 3. 逐步补充 SEO 基础信息与页面摘要。
-4. 如果后续要让非技术成员高频维护内容，继续细化 `.pages.yml` 字段说明。
+4. 持续补齐真实成员资料、项目与学术成果内容。
 
 ## 发布排查清单
 
@@ -87,4 +93,5 @@ bundle exec jekyll build
 
 - Cloudflare 域名维护：`docs/notes/cloudflare-domain-change.md`
 - CMS 图片使用：`docs/notes/cms-academic-content-images.md`
+- 固定页 CMS 方案：`docs/notes/cms-safe-fixed-pages-plan.md`
 - 仓库结构说明：`docs/repository-guide.md`

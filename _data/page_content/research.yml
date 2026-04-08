@@ -1,0 +1,24 @@
+masthead:
+  kicker: Research
+  title: 研究方向
+  intro: 围绕考古材料分析、实验复原和区域比较，研究方向页与首页保持一致的考古主题口径。
+section:
+  kicker: Research Areas
+  title: 核心研究方向
+  intro: 研究方向页、项目页与成果页将围绕以下三条主线保持一致的学术表达与栏目组织。
+areas:
+  - code: Area 01
+    title: 石器技术研究
+    description: 围绕旧石器时代技术体系开展类型学、工艺链与材料比较分析，讨论石器生产组织、知识传统与区域技术差异。
+    image: /assets/uploads/site/research-economy.png
+    image_alt: 石器技术研究
+  - code: Area 02
+    title: 汉水流域与长江中游旧石器研究
+    description: 关注区域遗址序列、技术演化与古环境互动，梳理远古人类活动及其在中游地带的长期发展过程。
+    image: /assets/uploads/site/research-yangtze.jpg
+    image_alt: 汉水流域与长江中游旧石器研究
+  - code: Area 03
+    title: 华南与东南亚比较研究
+    description: 比较华南与东南亚古代人类文化和技术关系，通过跨区域材料对读，讨论互动网络与区域演化问题。
+    image: /assets/uploads/site/research-hankou.jpg
+    image_alt: 华南与东南亚比较研究
