@@ -3,21 +3,24 @@ layout: default
 title: 首页
 permalink: /
 ---
+{% assign home = site.data.page_content.home %}
+{% assign research = site.data.page_content.research %}
 <div class="landing-shell landing-shell--center">
   <section class="landing-hero landing-hero--institutional">
     <div class="wrapper landing-hero__content landing-hero__content--institutional">
-      <p class="section-kicker section-kicker--hero">考古研究中心</p>
-      <h1 class="landing-title">考古课题组与研究中心信息平台</h1>
-      <p class="landing-lead">围绕石器技术研究、实验考古与微形态分析，持续建设课题组成员、项目、学术成果与合作动态的公开窗口。</p>
+      <p class="section-kicker section-kicker--hero">{{ home.hero.kicker }}</p>
+      <h1 class="landing-title">{{ home.hero.title }}</h1>
+      <p class="landing-lead">{{ home.hero.lead }}</p>
+      {% if home.hero.keywords %}
       <div class="hero-keywords">
-        <span class="detail-chip">石器技术</span>
-        <span class="detail-chip">实验考古</span>
-        <span class="detail-chip">微形态分析</span>
-        <span class="detail-chip">区域比较研究</span>
+        {% for keyword in home.hero.keywords %}
+        <span class="detail-chip">{{ keyword }}</span>
+        {% endfor %}
       </div>
+      {% endif %}
       <div class="hero-actions hero-actions--institutional">
-        <a class="button-primary" href="{{ '/research/' | relative_url }}">研究方向</a>
-        <a class="button-secondary" href="{{ '/members/' | relative_url }}">团队成员</a>
+        <a class="button-primary" href="{{ home.hero.primary_button_link | relative_url }}">{{ home.hero.primary_button_text }}</a>
+        <a class="button-secondary" href="{{ home.hero.secondary_button_link | relative_url }}">{{ home.hero.secondary_button_text }}</a>
       </div>
     </div>
   </section>
@@ -26,16 +29,16 @@ permalink: /
     <div class="wrapper">
       <div class="about-grid about-grid--institutional">
         <div>
-          <p class="section-kicker">机构简介</p>
-          <h2 class="section-title section-title--left">研究定位与方法</h2>
+          <p class="section-kicker">{{ home.intro.kicker }}</p>
+          <h2 class="section-title section-title--left">{{ home.intro.title }}</h2>
           <div class="about-accent-line"></div>
-          <p class="about-copy">本站以考古课题组为核心，服务于研究中心式的信息展示需求，集中呈现研究方向、成员结构、项目进展与成果发布，形成长期维护的公开界面。</p>
-          <p class="about-copy">当前建设重点包括 <strong>石器技术研究</strong>、<strong>实验考古</strong>、<strong>汉水流域及长江中游旧石器研究</strong> 与 <strong>华南及东南亚区域比较</strong> 等方向。</p>
-          <p class="about-copy">课题组强调材料分析、实验复原与跨区域比较相结合，并持续推进与国内外研究机构的合作交流。</p>
+          {% for paragraph in home.intro.paragraphs %}
+          <p class="about-copy">{{ paragraph }}</p>
+          {% endfor %}
         </div>
 
         <div class="media-stack media-stack--institutional">
-          <img class="media-stack__image" src="/assets/uploads/site/index-lab.jpg" alt="研究中心空间展示图">
+          <img class="media-stack__image" src="{{ home.intro.image | relative_url }}" alt="{{ home.intro.image_alt }}">
         </div>
       </div>
     </div>
@@ -45,39 +48,23 @@ permalink: /
     <div class="wrapper">
       <div class="section-header section-header--split">
         <div>
-          <p class="section-kicker">Research Areas</p>
-          <h2 class="section-title section-title--left">核心研究方向</h2>
+          <p class="section-kicker">{{ research.section.kicker }}</p>
+          <h2 class="section-title section-title--left">{{ research.section.title }}</h2>
         </div>
-        <p class="section-intro section-intro--narrow">研究方向页、项目页与成果页将围绕以下三条主线保持一致的学术表达与栏目组织。</p>
+        <p class="section-intro section-intro--narrow">{{ research.section.intro }}</p>
       </div>
 
       <div class="research-grid research-grid--institutional">
+        {% for area in research.areas limit:3 %}
         <article class="research-card research-card--institutional">
-          <img class="research-card__image" src="/assets/uploads/site/research-economy.png" alt="石器技术研究">
+          <img class="research-card__image" src="{{ area.image | relative_url }}" alt="{{ area.image_alt }}">
           <div class="research-card__body">
-            <p class="card-meta">Area 01</p>
-            <h3 class="card-title">石器技术研究</h3>
-            <p>围绕旧石器时代技术体系开展类型学与工艺链分析，结合显微观察与材料比较，重建早期人类技术行为与知识传统。</p>
+            <p class="card-meta">{{ area.code }}</p>
+            <h3 class="card-title">{{ area.title }}</h3>
+            <p>{{ area.description }}</p>
           </div>
         </article>
-
-        <article class="research-card research-card--institutional">
-          <img class="research-card__image" src="/assets/uploads/site/research-yangtze.jpg" alt="汉水流域与长江中游旧石器研究">
-          <div class="research-card__body">
-            <p class="card-meta">Area 02</p>
-            <h3 class="card-title">汉水流域与长江中游旧石器研究</h3>
-            <p>关注区域材料、遗址序列与技术演化问题，讨论远古人类活动、环境适应与地区间交流的长期过程。</p>
-          </div>
-        </article>
-
-        <article class="research-card research-card--institutional">
-          <img class="research-card__image" src="/assets/uploads/site/research-hankou.jpg" alt="华南与东南亚比较研究">
-          <div class="research-card__body">
-            <p class="card-meta">Area 03</p>
-            <h3 class="card-title">华南与东南亚比较研究</h3>
-            <p>比较华南与东南亚古代人类文化和技术关系，为跨区域考古合作、区域互动与文明交流研究提供新的证据框架。</p>
-          </div>
-        </article>
+        {% endfor %}
       </div>
     </div>
   </section>
@@ -145,21 +132,19 @@ permalink: /
     <div class="wrapper">
       <div class="section-header section-header--split">
         <div>
-          <p class="section-kicker">Contact</p>
-          <h2 class="section-title section-title--left">加入我们</h2>
+          <p class="section-kicker">{{ home.contact_section.kicker }}</p>
+          <h2 class="section-title section-title--left">{{ home.contact_section.title }}</h2>
         </div>
-        <p class="section-intro section-intro--narrow">欢迎对考古学、科技分析与区域比较研究感兴趣的学生、研究者及合作伙伴与课题组联系。</p>
+        <p class="section-intro section-intro--narrow">{{ home.contact_section.intro }}</p>
       </div>
 
       <div class="contact-grid contact-grid--institutional">
+        {% for card in home.contact_section.cards %}
         <article class="contact-card">
-          <strong>办公地点</strong>
-          <p>武汉大学历史学院<br>研究中心相关办公与资料整理空间可继续补充。</p>
+          <strong>{{ card.title }}</strong>
+          <p>{{ card.text | newline_to_br }}</p>
         </article>
-        <article class="contact-card">
-          <strong>联系邮箱</strong>
-          <p>lyhfrance2005@yahoo.fr<br>合作、招生与研究咨询优先通过邮件联系。</p>
-        </article>
+        {% endfor %}
       </div>
     </div>
   </section>

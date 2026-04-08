@@ -1,0 +1,35 @@
+hero:
+  kicker: 考古研究中心
+  title: 考古课题组与研究中心信息平台
+  lead: 围绕石器技术研究、实验考古与微形态分析，持续建设课题组成员、项目、学术成果与合作动态的公开窗口。
+  keywords:
+    - 石器技术
+    - 实验考古
+    - 微形态分析
+    - 区域比较研究
+  primary_button_text: 研究方向
+  primary_button_link: /research/
+  secondary_button_text: 团队成员
+  secondary_button_link: /members/
+intro:
+  kicker: 机构简介
+  title: 研究定位与方法
+  paragraphs:
+    - 本站以考古课题组为核心，服务于研究中心式的信息展示需求，集中呈现研究方向、成员结构、项目进展与成果发布，形成长期维护的公开界面。
+    - 当前建设重点包括石器技术研究、实验考古、汉水流域及长江中游旧石器研究与华南及东南亚区域比较等方向。
+    - 课题组强调材料分析、实验复原与跨区域比较相结合，并持续推进与国内外研究机构的合作交流。
+  image: /assets/uploads/site/index-lab.jpg
+  image_alt: 研究中心空间展示图
+contact_section:
+  kicker: Contact
+  title: 加入我们
+  intro: 欢迎对考古学、科技分析与区域比较研究感兴趣的学生、研究者及合作伙伴与课题组联系。
+  cards:
+    - title: 办公地点
+      text: |
+        武汉大学历史学院
+        研究中心相关办公与资料整理空间可继续补充。
+    - title: 联系邮箱
+      text: |
+        lyhfrance2005@yahoo.fr
+        合作、招生与研究咨询优先通过邮件联系。

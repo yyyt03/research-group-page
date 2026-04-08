@@ -7,25 +7,36 @@
 - `_config.yml`
   站点总配置。控制站点标题、域名、collections、默认 layout、插件与构建行为。
 - `.pages.yml`
-  Pages CMS 配置文件。当前建议只管理结构化集合内容，不直接在 CMS 中编辑固定页面模板。
+  Pages CMS 配置文件。当前建议管理结构化集合内容以及固定页面的数据文件，不直接在 CMS 中编辑固定页面模板。
 
 ### 页面源码
 
 - `pages/`
-  固定页面统一放在这里，方便维护页面结构与样式。
+  固定页面模板统一放在这里，负责页面结构、Liquid 渲染和样式挂接。
 
 当前包含：
 
-- `pages/index.markdown`（首页）
-- `pages/about.markdown`（关于我们）
-- `pages/research.md`（研究方向）
-- `pages/contact.md`（联系方式）
+- `pages/index.markdown`（首页模板）
+- `pages/about.markdown`（关于我们模板）
+- `pages/research.md`（研究方向模板）
+- `pages/contact.md`（联系方式模板）
 - `pages/members.md`（团队成员列表）
 - `pages/news.md`（学术成果列表）
 - `pages/projects.md`（项目列表）
 - `pages/404.html`（404 页面）
 
 这些页面都通过 `permalink` 暴露访问路径，所以目录整理不会改变线上 URL。
+
+### 固定页数据
+
+- `_data/page_content/home.yml`
+  首页可在 CMS 中维护的标题、简介、按钮和联系信息。
+- `_data/page_content/about.yml`
+  关于页标题、简介、段落、图片和统计数字。
+- `_data/page_content/research.yml`
+  研究页标题与研究方向卡片，同时首页研究方向模块也复用这份数据。
+- `_data/page_content/contact.yml`
+  联系页标题、说明和联系卡片。
 
 ### 导航与布局
 
@@ -84,6 +95,10 @@
 - `_members/`
 - `_news/`
 - `_projects/`
+- `_data/page_content/home.yml`
+- `_data/page_content/about.yml`
+- `_data/page_content/research.yml`
+- `_data/page_content/contact.yml`
 
 不建议直接放进 Pages CMS 富文本编辑的内容：
 
@@ -92,7 +107,7 @@
 - `pages/research.md`
 - `pages/contact.md`
 
-原因：这些固定页面已经包含较多模板化结构、分区 HTML 和样式挂钩字段，直接用 CMS 富文本编辑容易破坏页面结构。
+原因：固定页面模板包含 HTML 结构、Liquid 逻辑与样式类名。CMS 只改数据文件，才能避免页面结构被误改。
 
 ## 常见修改场景
 
@@ -104,13 +119,25 @@
 
 改 `_includes/header.html` 和 `assets/main.scss`。
 
-### 想改首页内容与结构
+### 想改首页结构
 
 改 `pages/index.markdown`。
 
-### 想改固定页面文案
+### 想改首页文案、按钮、联系信息
 
-改 `pages/about.markdown`、`pages/research.md`、`pages/contact.md`。
+改 `_data/page_content/home.yml`。
+
+### 想改关于页内容
+
+改 `_data/page_content/about.yml`。
+
+### 想改研究方向卡片
+
+改 `_data/page_content/research.yml`。
+
+### 想改联系页内容
+
+改 `_data/page_content/contact.yml`。
 
 ### 想改列表页结构
 
@@ -121,25 +148,6 @@
 - 成员详情：改 `_layouts/member.html` 和 `assets/main.scss` 中 `member-detail` 相关样式。
 - 学术成果详情：改 `_layouts/news-item.html` 和 `assets/main.scss` 中 `detail-shell` 相关样式。
 - 项目详情：改 `_layouts/project-item.html` 和 `assets/main.scss` 中 `detail-shell` 相关样式。
-
-### 想新增成员
-
-1. 在 `_members/` 复制一个现有成员文件。
-2. 修改 `name`、`role`、`photo`、`research`、`email`、`order` 等字段。
-3. 把图片放进 `assets/uploads/members/`。
-
-### 想新增学术成果
-
-1. 在 `_news/` 新建一篇 Markdown 文件。
-2. 填写 `title`、`date`、`cover`、`summary`。
-3. 在正文中继续写内容，正文可以插入多张图片。
-4. 配图放进 `assets/uploads/news/`。
-
-### 想新增项目
-
-1. 在 `_projects/` 新建 Markdown 文件。
-2. 填写 `title`、`period`、`leader`、`summary`、`status`。
-3. 在正文中补充项目详情。
 
 ## 本地检查与发布流程
 

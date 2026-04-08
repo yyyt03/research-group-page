@@ -1,0 +1,18 @@
+masthead:
+  kicker: About
+  title: 关于研究中心
+  intro: 本页面集中说明课题组的定位、研究主题与方法路径，作为全站内容的基础说明页。
+content:
+  paragraphs:
+    - 本网站用于展示武汉大学相关考古研究团队的建设进展，围绕成员、项目、成果与合作形成长期可维护的公开窗口。
+    - 李英华，武汉大学历史学院考古系教授、博士生导师，所属二级学科为中国考古，专业特长为石器技术研究。
+    - 研究重点包括汉水流域及长江中游远古人类石器技术的起源与演化，以及华南与东南亚古代人类文化与技术关系等问题，并持续开展跨学科协作与国际交流。
+  image: /assets/uploads/site/about-lab.jpg
+  image_alt: 研究中心仪器与空间展示图
+stats:
+  - value: 3
+    label: 核心研究方向
+    accent: false
+  - value: 1
+    label: 核心导师成员
+    accent: true

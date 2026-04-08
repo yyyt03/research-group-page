@@ -13,6 +13,7 @@ content:
     path: _members
     format: yaml-frontmatter
     subfolders: false
+    filename: "{primary}.md"
     fields:
       - name: name
         label: 姓名
@@ -36,6 +37,12 @@ content:
       - name: order
         label: 排序
         type: number
+      - name: discipline
+        label: 所属学科
+        type: string
+      - name: specialty
+        label: 专业特长
+        type: string
       - name: body
         label: 详细介绍
         type: rich-text
@@ -49,6 +56,7 @@ content:
     path: _news
     format: yaml-frontmatter
     subfolders: false
+    filename: "{year}-{month}-{day}-{primary}.md"
     fields:
       - name: title
         label: 标题
@@ -57,6 +65,7 @@ content:
       - name: date
         label: 日期
         type: date
+        required: true
       - name: cover
         label: 封面图
         type: image
@@ -68,7 +77,6 @@ content:
         type: text
       - name: body
         label: 正文（支持插图）
-        description: 在正文输入框中可通过工具栏图片按钮或输入 /image 插入正文图片。
         type: rich-text
         options:
           path: news
@@ -80,6 +88,7 @@ content:
     path: _projects
     format: yaml-frontmatter
     subfolders: false
+    filename: "{primary}.md"
     fields:
       - name: title
         label: 项目名称
@@ -106,28 +115,219 @@ content:
           path: projects
           extensions: [jpg, jpeg, png, webp, gif]
 
-  - name: about
-    label: 固定页-关于
+  - name: home_content
+    label: 固定页-首页内容
     type: file
-    path: pages/about.markdown
-    format: yaml-frontmatter
+    path: _data/page_content/home.yml
     fields:
-      - name: title
-        label: 标题
-        type: string
-      - name: body
-        label: 正文
-        type: rich-text
+      - name: hero
+        label: 首页主视觉
+        type: object
+        fields:
+          - name: kicker
+            label: 顶部小标题
+            type: string
+          - name: title
+            label: 主标题
+            type: string
+          - name: lead
+            label: 简介
+            type: text
+          - name: keywords
+            label: 关键词
+            type: string
+            list: true
+          - name: primary_button_text
+            label: 主按钮文字
+            type: string
+          - name: primary_button_link
+            label: 主按钮链接
+            type: string
+          - name: secondary_button_text
+            label: 次按钮文字
+            type: string
+          - name: secondary_button_link
+            label: 次按钮链接
+            type: string
+      - name: intro
+        label: 机构简介区块
+        type: object
+        fields:
+          - name: kicker
+            label: 小标题
+            type: string
+          - name: title
+            label: 标题
+            type: string
+          - name: paragraphs
+            label: 段落
+            type: text
+            list: true
+          - name: image
+            label: 配图
+            type: image
+            options:
+              path: site
+              extensions: [jpg, jpeg, png, webp]
+          - name: image_alt
+            label: 图片替代文本
+            type: string
+      - name: contact_section
+        label: 联系区块
+        type: object
+        fields:
+          - name: kicker
+            label: 小标题
+            type: string
+          - name: title
+            label: 标题
+            type: string
+          - name: intro
+            label: 简介
+            type: text
+          - name: cards
+            label: 联系卡片
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: 卡片标题
+                type: string
+              - name: text
+                label: 卡片内容
+                type: text
 
-  - name: contact
-    label: 固定页-联系
+  - name: about_content
+    label: 固定页-关于内容
     type: file
-    path: pages/contact.md
-    format: yaml-frontmatter
+    path: _data/page_content/about.yml
     fields:
-      - name: title
-        label: 标题
-        type: string
-      - name: body
-        label: 正文
-        type: rich-text
+      - name: masthead
+        label: 页头
+        type: object
+        fields:
+          - name: kicker
+            label: 顶部小标题
+            type: string
+          - name: title
+            label: 页面标题
+            type: string
+          - name: intro
+            label: 页面简介
+            type: text
+      - name: content
+        label: 正文内容
+        type: object
+        fields:
+          - name: paragraphs
+            label: 段落
+            type: text
+            list: true
+          - name: image
+            label: 配图
+            type: image
+            options:
+              path: site
+              extensions: [jpg, jpeg, png, webp]
+          - name: image_alt
+            label: 图片替代文本
+            type: string
+      - name: stats
+        label: 统计卡片
+        type: object
+        list: true
+        fields:
+          - name: value
+            label: 数字
+            type: number
+          - name: label
+            label: 说明
+            type: string
+          - name: accent
+            label: 强调样式
+            type: boolean
+
+  - name: research_content
+    label: 固定页-研究内容
+    type: file
+    path: _data/page_content/research.yml
+    fields:
+      - name: masthead
+        label: 页头
+        type: object
+        fields:
+          - name: kicker
+            label: 顶部小标题
+            type: string
+          - name: title
+            label: 页面标题
+            type: string
+          - name: intro
+            label: 页面简介
+            type: text
+      - name: section
+        label: 首页研究区块标题
+        type: object
+        fields:
+          - name: kicker
+            label: 小标题
+            type: string
+          - name: title
+            label: 标题
+            type: string
+          - name: intro
+            label: 简介
+            type: text
+      - name: areas
+        label: 研究方向卡片
+        type: object
+        list: true
+        fields:
+          - name: code
+            label: 编号
+            type: string
+          - name: title
+            label: 标题
+            type: string
+          - name: description
+            label: 简介
+            type: text
+          - name: image
+            label: 配图
+            type: image
+            options:
+              path: site
+              extensions: [jpg, jpeg, png, webp]
+          - name: image_alt
+            label: 图片替代文本
+            type: string
+
+  - name: contact_content
+    label: 固定页-联系内容
+    type: file
+    path: _data/page_content/contact.yml
+    fields:
+      - name: masthead
+        label: 页头
+        type: object
+        fields:
+          - name: kicker
+            label: 顶部小标题
+            type: string
+          - name: title
+            label: 页面标题
+            type: string
+          - name: intro
+            label: 页面简介
+            type: text
+      - name: cards
+        label: 联系卡片
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: 卡片标题
+            type: string
+          - name: text
+            label: 卡片内容
+            type: text
