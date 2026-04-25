@@ -1,12 +1,15 @@
-title: 考古课题组
+title: Technologie Lithique
 email: contact@example.com
 description: >-
-  这里填写课题组简介，例如研究方向、单位和网站定位。
+  石器技术实验室围绕旧石器时代技术学分析、三维重建与区域比较研究，持续建设开放的课题组主页。
 baseurl: ""
 url: "https://yyyt03.github.io"
 lang: zh-CN
 timezone: Asia/Shanghai
 github_username: "yyyt03"
+subtitle: 石器技术实验室
+brand_eyebrow: Wuhan University Archaeology Lab
+brand_mark: TL
 
 theme: minima
 plugins:

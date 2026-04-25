@@ -8,7 +8,7 @@ permalink: /members/
     <header class="page-masthead">
       <p class="section-kicker">People</p>
       <h1 class="section-title section-title--left">团队成员</h1>
-      <p class="section-intro section-intro--wide">成员页面集中展示课题组核心教师、学生与合作成员，保持统一的信息密度与详情页入口。</p>
+      <p class="section-intro section-intro--wide">成员页面集中展示课题组核心教师与相关成员，当前已补入李英华、韦璇、李康康、牛文渊等教师入口，后续可继续完善学生与合作成员资料。</p>
     </header>
 
     {% assign members = site.members | sort: "order" %}

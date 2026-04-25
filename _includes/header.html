@@ -1,9 +1,9 @@
 <header class="lab-header" role="banner">
   <div class="wrapper lab-header__inner">
     <a class="lab-brand" rel="author" href="{{ '/' | relative_url }}">
-      <span class="lab-brand__mark">A</span>
+      <span class="lab-brand__mark">{{ site.brand_mark | default: "TL" }}</span>
       <span class="lab-brand__meta">
-        <span class="lab-brand__eyebrow">Archaeology Research Group</span>
+        <span class="lab-brand__eyebrow">{{ site.brand_eyebrow | default: "Stone Tool Research Lab" }}</span>
         <span class="lab-brand__text">{{ site.title }}</span>
       </span>
     </a>

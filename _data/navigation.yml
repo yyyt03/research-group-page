@@ -7,9 +7,7 @@ main:
     url: /research/
   - title: 团队成员
     url: /members/
-  - title: 项目
+  - title: 课程与实验
+    url: /courses/
+  - title: 项目与学术成果
     url: /projects/
-  - title: 学术成果
-    url: /news/
-  - title: 联系我们
-    url: /contact/

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 课题组简介
+title: 关于我们
 permalink: /about/
 ---
 {% assign about = site.data.page_content.about %}

@@ -55,14 +55,40 @@ permalink: /
       </div>
 
       <div class="research-grid research-grid--institutional">
-        {% for area in research.areas limit:3 %}
-        <article class="research-card research-card--institutional">
-          <img class="research-card__image" src="{{ area.image | relative_url }}" alt="{{ area.image_alt }}">
-          <div class="research-card__body">
-            <p class="card-meta">{{ area.code }}</p>
-            <h3 class="card-title">{{ area.title }}</h3>
-            <p>{{ area.description }}</p>
-          </div>
+        {% for area in research.areas %}
+        <article class="research-card research-card--institutional research-card--linked">
+          <a class="research-card__link" href="{{ area.link | relative_url }}">
+            <img class="research-card__image" src="{{ area.image | relative_url }}" alt="{{ area.image_alt }}">
+            <div class="research-card__body">
+              <p class="card-meta">{{ area.code }}</p>
+              <h3 class="card-title">{{ area.title }}</h3>
+              <p>{{ area.description }}</p>
+            </div>
+          </a>
+        </article>
+        {% endfor %}
+      </div>
+      <p class="section-link"><a href="{{ '/research/' | relative_url }}">查看三个研究方向的完整清单</a></p>
+    </div>
+  </section>
+
+  <section class="section-block section-block--light section-block--institutional">
+    <div class="wrapper">
+      <div class="section-header section-header--split">
+        <div>
+          <p class="section-kicker">{{ home.output_preview.kicker }}</p>
+          <h2 class="section-title section-title--left">{{ home.output_preview.title }}</h2>
+        </div>
+        <p class="section-intro section-intro--narrow">{{ home.output_preview.intro }}</p>
+      </div>
+
+      <div class="publication-grid publication-grid--institutional publication-grid--light">
+        {% for item in home.output_preview.cards %}
+        <article class="publication-card publication-card--institutional publication-card--light">
+          <p class="card-meta">{{ item.meta }}</p>
+          <h3 class="card-title">{{ item.title }}</h3>
+          <p>{{ item.text }}</p>
+          <a class="publication-card__link publication-card__link--light" href="{{ item.link | relative_url }}">{{ item.link_text }}</a>
         </article>
         {% endfor %}
       </div>
@@ -76,18 +102,18 @@ permalink: /
           <p class="section-kicker">Research Team</p>
           <h2 class="section-title section-title--left">核心成员</h2>
         </div>
-        <p class="section-intro section-intro--narrow">首页仅展示核心成员入口，完整名单与个人资料可在成员栏目中继续查看。</p>
+        <p class="section-intro section-intro--narrow">首页展示课题组核心教师入口，完整名单与个人资料可在成员栏目中继续查看。</p>
       </div>
 
       {% assign members = site.members | sort: "order" %}
       {% if members.size > 0 %}
       <div class="team-grid team-grid--institutional">
-        {% for member in members limit:3 %}
+        {% for member in members limit:4 %}
         <article class="member-card member-card--institutional">
           {% if member.photo %}
           <img class="member-card__image" src="{{ member.photo | relative_url }}" alt="{{ member.name }}">
           {% else %}
-          <div class="member-card__image member-card__image--placeholder">◯</div>
+          <div class="member-card__image member-card__image--placeholder">TL</div>
           {% endif %}
           <div class="member-card__body">
             <p class="card-meta">{{ member.role }}</p>
@@ -98,32 +124,6 @@ permalink: /
         {% endfor %}
       </div>
       <p class="section-link"><a href="{{ '/members/' | relative_url }}">查看全部成员</a></p>
-      {% endif %}
-    </div>
-  </section>
-
-  <section class="section-block section-block--light section-block--institutional section-block--archive">
-    <div class="wrapper">
-      <div class="section-header section-header--split">
-        <div>
-          <p class="section-kicker">Academic Output</p>
-          <h2 class="section-title section-title--left">最新学术成果</h2>
-        </div>
-        <p class="section-intro section-intro--narrow">当前成果展示由 `news` collection 承接，以条目摘要方式集中呈现近期研究更新。</p>
-      </div>
-
-      {% assign latest_news = site.news | sort: "date" | reverse %}
-      {% if latest_news.size > 0 %}
-      <div class="publication-grid publication-grid--institutional">
-        {% for item in latest_news limit:3 %}
-        <article class="publication-card publication-card--institutional">
-          <p class="publication-card__journal">{{ item.date | date: "%Y-%m-%d" }}</p>
-          <h3 class="card-title"><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h3>
-          <p>{{ item.summary }}</p>
-          <a class="publication-card__link" href="{{ item.url | relative_url }}">查看详情</a>
-        </article>
-        {% endfor %}
-      </div>
       {% endif %}
     </div>
   </section>
