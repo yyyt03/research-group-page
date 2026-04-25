@@ -12,7 +12,7 @@ permalink: /about/
       <p class="section-intro section-intro--wide">{{ about.masthead.intro }}</p>
     </header>
 
-    <div class="about-grid about-grid--institutional">
+    <div class="about-grid about-grid--institutional about-grid--detail">
       <div>
         {% for paragraph in about.content.paragraphs %}
         <p class="about-copy">{{ paragraph }}</p>

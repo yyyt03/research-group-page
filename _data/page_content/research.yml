@@ -4,7 +4,7 @@ masthead:
   intro: 课题组的主要研究领域围绕三个方向展开，页面从展示型卡片调整为可点击、可继续下钻的结构。
 section:
   kicker: Research Areas
-  title: 核心研究方向
+  title: 研究领域
   intro: 每个方向均配置概要说明、配图以及可继续查看的论文、书籍或学位论文清单。
 areas:
   - code: Area 01

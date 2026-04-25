@@ -19,7 +19,7 @@
           <h3 class="footer-heading">栏目导航</h3>
           <ul class="footer-links">
             {% for item in site.data.navigation.main %}
-            <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+            <li><a class="{% if page.url == item.url %}is-current{% endif %}" href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
             {% endfor %}
           </ul>
         </section>
@@ -37,7 +37,7 @@
         <p>&copy; 2026 {{ site.title }}. All rights reserved.</p>
         <div class="footer-bottom__links">
           <a href="mailto:lyhfrance2005@yahoo.fr">联系邮箱</a>
-          <a href="{{ '/about/' | relative_url }}">关于我们</a>
+          <a class="{% if page.url == '/about/' %}is-current{% endif %}" href="{{ '/about/' | relative_url }}">关于我们</a>
         </div>
       </div>
     </footer>
