@@ -12,8 +12,8 @@ hero:
   secondary_button_text: 关于我们
   secondary_button_link: /about/
 intro:
-  kicker: About
-  title: Technologie Lithique
+  kicker: 关于我们
+  title: 关于我们
   paragraphs:
     - 石器技术实验室以李英华教授及其课题组为核心，围绕石器技术研究、汉水流域与长江中游史前人类的石器技术与行为研究、华南与东南亚古人类的技术与行为研究等主题持续展开工作。
     - 本课题组所属二级学科为先秦考古，强调考古学、历史学、人工智能、文化遗产和测绘等专业的跨学科协作。
@@ -21,25 +21,25 @@ intro:
   image: /assets/uploads/docx-tl-homepage-0326/figure-04.jpeg
   image_alt: 首页 About 区块配图
 output_preview:
-  kicker: Highlights
-  title: 当前建设重点
-  intro: 站点将同步整理研究方向、项目、课程与书籍成果，论文与学位论文按研究方向归档展示。
+  kicker: 项目与学术成果
+  title: 项目与学术成果
+  intro: 集中展示课题组代表性科研项目、书籍成果与论文归档，形成对外展示与学术检索兼顾的成果入口。
   cards:
-    - meta: 项目
-      title: 东亚地区人类起源问题综合研究
-      text: 国家社科基金重大项目，在研，作为当前重点项目在站点中优先展示。
+    - meta: 科研项目
+      title: 重点项目展示
+      text: 汇集课题组承担的代表性科研项目，展示研究主题、合作维度与学术推进方向。
       link_text: 查看项目与成果
       link: /projects/
-    - meta: 成果
-      title: 《旧石器技术》
-      text: 已确认纳入“项目与学术成果”页面，作为书籍成果首批内容展示。
+    - meta: 书籍成果
+      title: 代表性著作
+      text: 展示课题组已出版或重点呈现的书籍成果，形成面向研究与教学的基础参考资源。
       link_text: 查看书籍成果
       link: /projects/#books
-    - meta: 课程
-      title: 世界旧石器技术虚拟仿真实验
-      text: 课程与实验页面将集中整理慕课和虚拟仿真实验入口。
-      link_text: 查看课程与实验
-      link: /courses/
+    - meta: 论文归档
+      title: 论文与学位论文
+      text: 按研究方向梳理论文与学位论文，便于从主题维度快速检索相关学术产出。
+      link_text: 查看项目与成果
+      link: /projects/
 contact_section:
   kicker: Contact
   title: 联系方式

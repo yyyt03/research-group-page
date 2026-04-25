@@ -2020,17 +2020,17 @@ $center-panel: #ffffff;
   grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.78fr);
 }
 
-.about-grid--institutional .media-stack {
+.about-grid--detail .media-stack {
   background: #eef2f7;
-  aspect-ratio: 11 / 15;
+  aspect-ratio: 610 / 407;
   border-radius: 24px;
   overflow: hidden;
 }
 
-.about-grid--institutional .media-stack__image {
+.about-grid--detail .media-stack__image {
   background: #eef2f7;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center center;
   width: 100%;
 }
@@ -2777,18 +2777,28 @@ a:active {
   box-shadow: none;
 }
 
-.lab-body[data-theme="dark"] .lab-nav__link {
-  color: #c4d0dd;
+.lab-body[data-theme="dark"] .lab-nav__link,
+.lab-body[data-theme="dark"] .lab-nav__link:visited,
+.lab-body[data-theme="dark"] .lab-nav__link:hover,
+.lab-body[data-theme="dark"] .lab-nav__link:focus-visible {
+  color: #f4f8fc;
 }
 
-.lab-body[data-theme="dark"] .lab-nav__link:hover,
-.lab-body[data-theme="dark"] .lab-nav__link:focus-visible,
+.lab-body[data-theme="dark"] .lab-nav__link.is-current,
+.lab-body[data-theme="dark"] .lab-nav__link.is-current:visited,
 .lab-body[data-theme="dark"] .lab-nav__link.is-current {
-  color: #eef4fb;
+  color: #d78b47;
 }
 
 .lab-body[data-theme="dark"] .lab-nav__link::after {
   background: #d78b47;
+}
+
+.lab-body[data-theme="dark"] .lab-nav__link:hover::after,
+.lab-body[data-theme="dark"] .lab-nav__link:focus-visible::after,
+.lab-body[data-theme="dark"] .lab-nav__link.is-current::after {
+  opacity: 1;
+  transform: scaleX(1);
 }
 
 .lab-body[data-theme="dark"] .theme-toggle {
@@ -2855,6 +2865,69 @@ a:active {
   background: linear-gradient(180deg, #0b121c 0%, #091019 100%);
 }
 
+.lab-body[data-theme="dark"] .detail-section__image {
+  background: #182536;
+  border-color: rgba(160, 176, 197, 0.18);
+}
+
+.lab-body[data-theme="dark"] .detail-section__panel {
+  background: #182536;
+  border-color: rgba(160, 176, 197, 0.18);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.2);
+}
+
+.lab-body[data-theme="dark"] .detail-section__panel h3,
+.lab-body[data-theme="dark"] .detail-section__panel strong,
+.lab-body[data-theme="dark"] .detail-section__panel b {
+  color: #f3f7fc;
+}
+
+.lab-body[data-theme="dark"] .detail-section__panel p,
+.lab-body[data-theme="dark"] .detail-section__panel li,
+.lab-body[data-theme="dark"] .detail-list li {
+  color: #d9e3ee;
+}
+
+.lab-body[data-theme="dark"] .detail-list li::marker {
+  color: #d78b47;
+}
+
+.lab-body[data-theme="dark"] .landing-hero--institutional .button-primary,
+.lab-body[data-theme="dark"] .landing-hero--institutional .button-primary:visited,
+.lab-body[data-theme="dark"] .landing-hero--institutional .button-primary:hover,
+.lab-body[data-theme="dark"] .landing-hero--institutional .button-primary:focus-visible {
+  color: #111111;
+}
+
+.lab-body[data-theme="dark"] .landing-hero--institutional .button-secondary,
+.lab-body[data-theme="dark"] .landing-hero--institutional .button-secondary:visited,
+.lab-body[data-theme="dark"] .landing-hero--institutional .button-secondary:hover,
+.lab-body[data-theme="dark"] .landing-hero--institutional .button-secondary:focus-visible {
+  color: #ffffff;
+}
+
+.lab-body[data-theme="dark"] .footer-links a,
+.lab-body[data-theme="dark"] .footer-links a:visited,
+.lab-body[data-theme="dark"] .footer-bottom__links a,
+.lab-body[data-theme="dark"] .footer-bottom__links a:visited {
+  color: #f4f8fc;
+  transition: color 180ms ease;
+}
+
+.lab-body[data-theme="dark"] .footer-links a:hover,
+.lab-body[data-theme="dark"] .footer-links a:focus-visible,
+.lab-body[data-theme="dark"] .footer-bottom__links a:hover,
+.lab-body[data-theme="dark"] .footer-bottom__links a:focus-visible {
+  color: #ffd2a5;
+}
+
+.lab-body[data-theme="dark"] .footer-links a.is-current,
+.lab-body[data-theme="dark"] .footer-links a.is-current:visited,
+.lab-body[data-theme="dark"] .footer-bottom__links a.is-current,
+.lab-body[data-theme="dark"] .footer-bottom__links a.is-current:visited {
+  color: #d78b47;
+}
+
 @media (max-width: 1040px) {
   .about-grid--institutional {
     grid-template-columns: 1fr;
@@ -2862,6 +2935,10 @@ a:active {
 
   .section-header--split {
     grid-template-columns: 1fr;
+  }
+
+  .detail-section {
+    scroll-margin-top: 120px;
   }
 }
 
@@ -2892,15 +2969,22 @@ a:active {
   .lab-body[data-theme="dark"] .lab-nav__link:visited {
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(160, 176, 197, 0.08);
-    color: #e8eef6;
+    color: #ffffff;
   }
 
   .lab-body[data-theme="dark"] .lab-nav__link:hover,
-  .lab-body[data-theme="dark"] .lab-nav__link:focus-visible,
-  .lab-body[data-theme="dark"] .lab-nav__link.is-current {
+  .lab-body[data-theme="dark"] .lab-nav__link:focus-visible {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(160, 176, 197, 0.14);
+    color: #ffffff;
+  }
+
+  .lab-body[data-theme="dark"] .lab-nav__link.is-current,
+  .lab-body[data-theme="dark"] .lab-nav__link.is-current:hover,
+  .lab-body[data-theme="dark"] .lab-nav__link.is-current:focus-visible {
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(215, 139, 71, 0.22);
-    color: #ffffff;
+    color: #d78b47;
   }
 
   .lab-body[data-theme="dark"] .lab-nav-toggle span {
@@ -3151,6 +3235,7 @@ a:active {
 
 .detail-section {
   margin-top: 84px;
+  scroll-margin-top: 132px;
 }
 
 .detail-section--compact {
@@ -3166,13 +3251,19 @@ a:active {
 }
 
 .detail-section__image {
+  aspect-ratio: 16 / 9;
+  background: #f7f8fb;
+  border: 1px solid rgba(48, 69, 92, 0.08);
   border-radius: 18px;
   box-shadow: 0 18px 40px rgba(28, 38, 54, 0.12);
   display: block;
-  height: 320px;
+  height: auto;
   margin-bottom: 28px;
-  object-fit: cover;
-  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: contain;
+  object-position: center center;
+  width: 65%;
 }
 
 .detail-section__panel {
@@ -3208,10 +3299,12 @@ a:active {
 @media (max-width: 640px) {
   .detail-section {
     margin-top: 56px;
+    scroll-margin-top: 104px;
   }
 
   .detail-section__image {
-    height: 220px;
+    aspect-ratio: 16 / 9;
+    width: 92%;
   }
 
   .detail-section__panel {

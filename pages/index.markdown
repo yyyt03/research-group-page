@@ -99,10 +99,10 @@ permalink: /
     <div class="wrapper">
       <div class="section-header section-header--split">
         <div>
-          <p class="section-kicker">Research Team</p>
-          <h2 class="section-title section-title--left">核心成员</h2>
+          <p class="section-kicker">团队成员</p>
+          <h2 class="section-title section-title--left">团队成员</h2>
         </div>
-        <p class="section-intro section-intro--narrow">首页展示课题组核心教师入口，完整名单与个人资料可在成员栏目中继续查看。</p>
+        <p class="section-intro section-intro--narrow">首页展示课题组教师与学生成员入口，完整名单与个人资料可在成员栏目中继续查看。</p>
       </div>
 
       {% assign members = site.members | sort: "order" %}
