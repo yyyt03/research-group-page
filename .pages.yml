@@ -51,7 +51,7 @@ content:
           extensions: [jpg, jpeg, png, webp, gif]
 
   - name: news
-    label: 学术成果
+    label: 学术成果与动态
     type: collection
     path: _news
     format: yaml-frontmatter
@@ -172,6 +172,39 @@ content:
           - name: image_alt
             label: 图片替代文本
             type: string
+      - name: output_preview
+        label: 首页项目与学术成果区块
+        type: object
+        fields:
+          - name: kicker
+            label: 小标题
+            type: string
+          - name: title
+            label: 标题
+            type: string
+          - name: intro
+            label: 简介
+            type: text
+          - name: cards
+            label: 卡片
+            type: object
+            list: true
+            fields:
+              - name: meta
+                label: 分类
+                type: string
+              - name: title
+                label: 标题
+                type: string
+              - name: text
+                label: 说明
+                type: text
+              - name: link_text
+                label: 按钮文字
+                type: string
+              - name: link
+                label: 跳转链接
+                type: string
       - name: contact_section
         label: 联系区块
         type: object
@@ -286,6 +319,9 @@ content:
           - name: code
             label: 编号
             type: string
+          - name: slug
+            label: 锚点标识
+            type: string
           - name: title
             label: 标题
             type: string
@@ -300,6 +336,9 @@ content:
               extensions: [jpg, jpeg, png, webp]
           - name: image_alt
             label: 图片替代文本
+            type: string
+          - name: link
+            label: 跳转链接
             type: string
 
   - name: contact_content
@@ -330,4 +369,54 @@ content:
             type: string
           - name: text
             label: 卡片内容
+            type: text
+
+  - name: outputs_content
+    label: 固定页-项目与学术成果内容
+    type: file
+    path: _data/page_content/outputs.yml
+    fields:
+      - name: masthead
+        label: 页头
+        type: object
+        fields:
+          - name: kicker
+            label: 顶部小标题
+            type: string
+          - name: title
+            label: 页面标题
+            type: string
+          - name: intro
+            label: 页面简介
+            type: text
+      - name: books
+        label: 书籍成果
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: 书名
+            type: string
+          - name: authors
+            label: 作者
+            type: string
+          - name: publisher
+            label: 出版社
+            type: string
+          - name: year
+            label: 年份
+            type: string
+          - name: note
+            label: 说明
+            type: text
+      - name: highlights
+        label: 论文与归档说明
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: 标题
+            type: string
+          - name: text
+            label: 说明
             type: text

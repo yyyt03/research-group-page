@@ -3166,7 +3166,7 @@ a:active {
   }
 
   .lab-nav {
-    position: relative;
+    position: static;
   }
 
   .lab-nav__list {
@@ -3177,7 +3177,7 @@ a:active {
     padding: 14px;
     position: absolute;
     right: 0;
-    top: calc(100% + 8px);
+    top: calc(100% + 1px);
     width: min(360px, calc(100vw - 40px));
   }
 
@@ -3190,7 +3190,7 @@ a:active {
   .lab-nav__list {
     max-height: min(calc(100svh - 86px), 68vh);
     max-width: calc(100vw - 32px);
-    top: calc(100% + 8px);
+    top: calc(100% + 1px);
     width: calc(100vw - 32px);
   }
 }
@@ -3297,6 +3297,20 @@ a:active {
 }
 
 @media (max-width: 640px) {
+  .about-grid--institutional:not(.about-grid--detail) .media-stack {
+    background: #eef2f7;
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  .about-grid--institutional:not(.about-grid--detail) .media-stack__image {
+    background: #eef2f7;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    object-position: center center;
+  }
+
   .detail-section {
     margin-top: 56px;
     scroll-margin-top: 104px;
