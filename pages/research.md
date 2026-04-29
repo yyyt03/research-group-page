@@ -4,6 +4,7 @@ title: 研究领域
 permalink: /research/
 ---
 {% assign research = site.data.page_content.research %}
+{% assign research_areas = site.research_areas | sort: "order" %}
 <section class="page-shell page-shell--institutional">
   <div class="wrapper">
     <header class="page-masthead">
@@ -13,9 +14,9 @@ permalink: /research/
     </header>
 
     <div class="research-grid research-grid--institutional">
-      {% for area in research.areas %}
+      {% for area in research_areas %}
       <article class="research-card research-card--institutional research-card--linked">
-        <a class="research-card__link" href="{{ area.link | relative_url }}">
+        <a class="research-card__link" href="{{ '/research/' | append: '#' | append: area.slug | relative_url }}">
           <img class="research-card__image" src="{{ area.image | relative_url }}" alt="{{ area.image_alt }}">
           <div class="research-card__body">
             <p class="card-meta">{{ area.code }}</p>
@@ -27,7 +28,7 @@ permalink: /research/
       {% endfor %}
     </div>
 
-    {% for area in research.areas %}
+    {% for area in research_areas %}
     <section id="{{ area.slug }}" class="detail-section">
       <div class="detail-section__header">
         <div>

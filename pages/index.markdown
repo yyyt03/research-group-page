@@ -5,6 +5,7 @@ permalink: /
 ---
 {% assign home = site.data.page_content.home %}
 {% assign research = site.data.page_content.research %}
+{% assign research_areas = site.research_areas | sort: "order" %}
 <div class="landing-shell landing-shell--center">
   <section class="landing-hero landing-hero--institutional">
     <div class="wrapper landing-hero__content landing-hero__content--institutional">
@@ -55,9 +56,9 @@ permalink: /
       </div>
 
       <div class="research-grid research-grid--institutional">
-        {% for area in research.areas %}
+        {% for area in research_areas %}
         <article class="research-card research-card--institutional research-card--linked">
-          <a class="research-card__link" href="{{ area.link | relative_url }}">
+          <a class="research-card__link" href="{{ '/research/' | append: '#' | append: area.slug | relative_url }}">
             <img class="research-card__image" src="{{ area.image | relative_url }}" alt="{{ area.image_alt }}">
             <div class="research-card__body">
               <p class="card-meta">{{ area.code }}</p>

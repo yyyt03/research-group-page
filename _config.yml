@@ -22,6 +22,14 @@ collections:
   news:
     output: true
     permalink: /news/:name/
+  research_areas:
+    output: false
+  courses:
+    output: false
+  books:
+    output: false
+  output_highlights:
+    output: false
   projects:
     output: true
     permalink: /projects/:name/

@@ -5,6 +5,8 @@ permalink: /projects/
 ---
 {% assign outputs = site.data.page_content.outputs %}
 {% assign projects = site.projects | sort: "order" %}
+{% assign books = site.books | sort: "order" %}
+{% assign output_highlights = site.output_highlights | sort: "order" %}
 <section class="page-shell page-shell--institutional">
   <div class="wrapper">
     <header class="page-masthead">
@@ -44,7 +46,7 @@ permalink: /projects/
       </div>
 
       <div class="publication-grid publication-grid--institutional publication-grid--light">
-        {% for book in outputs.books %}
+        {% for book in books %}
         <article class="publication-card publication-card--institutional publication-card--light">
           <p class="card-meta">{{ book.year }}</p>
           <h3 class="card-title">{{ book.title }}</h3>
@@ -66,7 +68,7 @@ permalink: /projects/
       </div>
 
       <div class="publication-grid publication-grid--institutional publication-grid--light">
-      {% for item in outputs.highlights %}
+        {% for item in output_highlights %}
         <article class="publication-card publication-card--institutional publication-card--light">
           <h3 class="card-title">{{ item.title }}</h3>
           <p>{{ item.text }}</p>

@@ -4,6 +4,7 @@ title: 课程与实验
 permalink: /courses/
 ---
 {% assign courses = site.data.page_content.courses %}
+{% assign course_items = site.courses | sort: "order" %}
 <section class="page-shell page-shell--institutional">
   <div class="wrapper">
     <header class="page-masthead">
@@ -13,7 +14,7 @@ permalink: /courses/
     </header>
 
     <div class="project-grid project-grid--institutional">
-      {% for card in courses.cards %}
+      {% for card in course_items %}
         <article class="project-card project-card--institutional">
           <p class="card-meta">{{ card.meta }}</p>
           <h2 class="card-title">{{ card.title }}</h2>

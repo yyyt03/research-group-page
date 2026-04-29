@@ -7,8 +7,58 @@ settings:
     merge: true
 
 content:
+  - name: research_areas
+    label: 研究领域条目
+    type: collection
+    path: _research_areas
+    format: yaml-frontmatter
+    subfolders: false
+    filename: "{primary}.md"
+    fields:
+      - name: title
+        label: 标题
+        type: string
+        required: true
+      - name: order
+        label: 排序
+        type: number
+      - name: code
+        label: 编号
+        type: string
+      - name: slug
+        label: 锚点标识
+        type: string
+        required: true
+      - name: description
+        label: 简介
+        type: text
+      - name: image
+        label: 配图
+        type: image
+        options:
+          path: site
+          extensions: [jpg, jpeg, png, webp]
+      - name: image_alt
+        label: 图片替代文本
+        type: string
+      - name: detail_intro
+        label: 详情区简介
+        type: text
+      - name: panels
+        label: 详情区块
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: 区块标题
+            type: string
+          - name: entries
+            label: 条目列表
+            type: text
+            list: true
+
   - name: members
-    label: 团队成员
+    label: 团队成员条目
     type: collection
     path: _members
     format: yaml-frontmatter
@@ -50,40 +100,36 @@ content:
           path: members
           extensions: [jpg, jpeg, png, webp, gif]
 
-  - name: news
-    label: 学术成果与动态
+  - name: courses
+    label: 课程与实验条目
     type: collection
-    path: _news
+    path: _courses
     format: yaml-frontmatter
     subfolders: false
-    filename: "{year}-{month}-{day}-{primary}.md"
+    filename: "{primary}.md"
     fields:
       - name: title
         label: 标题
         type: string
         required: true
-      - name: date
-        label: 日期
-        type: date
-        required: true
-      - name: cover
-        label: 封面图
-        type: image
-        options:
-          path: news
-          extensions: [jpg, jpeg, png, webp]
-      - name: summary
-        label: 摘要
+      - name: order
+        label: 排序
+        type: number
+      - name: meta
+        label: 分类
+        type: string
+      - name: label
+        label: 属性标签
+        type: string
+      - name: value
+        label: 属性内容
+        type: string
+      - name: text
+        label: 说明
         type: text
-      - name: body
-        label: 正文（支持插图）
-        type: rich-text
-        options:
-          path: news
-          extensions: [jpg, jpeg, png, webp, gif]
 
   - name: projects
-    label: 项目
+    label: 项目条目
     type: collection
     path: _projects
     format: yaml-frontmatter
@@ -94,6 +140,9 @@ content:
         label: 项目名称
         type: string
         required: true
+      - name: order
+        label: 排序
+        type: number
       - name: period
         label: 周期
         type: string
@@ -115,13 +164,60 @@ content:
           path: projects
           extensions: [jpg, jpeg, png, webp, gif]
 
+  - name: books
+    label: 书籍成果条目
+    type: collection
+    path: _books
+    format: yaml-frontmatter
+    subfolders: false
+    filename: "{primary}.md"
+    fields:
+      - name: title
+        label: 书名
+        type: string
+        required: true
+      - name: order
+        label: 排序
+        type: number
+      - name: authors
+        label: 作者
+        type: string
+      - name: publisher
+        label: 出版社
+        type: string
+      - name: year
+        label: 年份
+        type: string
+      - name: note
+        label: 说明
+        type: text
+
+  - name: output_highlights
+    label: 成果说明条目
+    type: collection
+    path: _output_highlights
+    format: yaml-frontmatter
+    subfolders: false
+    filename: "{primary}.md"
+    fields:
+      - name: title
+        label: 标题
+        type: string
+        required: true
+      - name: order
+        label: 排序
+        type: number
+      - name: text
+        label: 说明
+        type: text
+
   - name: home_content
-    label: 固定页-首页内容
+    label: 首页
     type: file
     path: _data/page_content/home.yml
     fields:
       - name: hero
-        label: 首页主视觉
+        label: 主视觉
         type: object
         fields:
           - name: kicker
@@ -150,7 +246,7 @@ content:
             label: 次按钮链接
             type: string
       - name: intro
-        label: 机构简介区块
+        label: 关于区块
         type: object
         fields:
           - name: kicker
@@ -173,7 +269,7 @@ content:
             label: 图片替代文本
             type: string
       - name: output_preview
-        label: 首页项目与学术成果区块
+        label: 项目与学术成果预览
         type: object
         fields:
           - name: kicker
@@ -186,7 +282,7 @@ content:
             label: 简介
             type: text
           - name: cards
-            label: 卡片
+            label: 预览卡片
             type: object
             list: true
             fields:
@@ -206,7 +302,7 @@ content:
                 label: 跳转链接
                 type: string
       - name: members_section
-        label: 首页成员区块
+        label: 团队成员预览
         type: object
         fields:
           - name: kicker
@@ -250,7 +346,7 @@ content:
                 type: text
 
   - name: about_content
-    label: 固定页-关于内容
+    label: 关于我们
     type: file
     path: _data/page_content/about.yml
     fields:
@@ -300,7 +396,7 @@ content:
             type: boolean
 
   - name: research_content
-    label: 固定页-研究内容
+    label: 研究领域页面文案
     type: file
     path: _data/page_content/research.yml
     fields:
@@ -318,7 +414,7 @@ content:
             label: 页面简介
             type: text
       - name: section
-        label: 首页研究区块标题
+        label: 首页研究区块
         type: object
         fields:
           - name: kicker
@@ -330,55 +426,11 @@ content:
           - name: intro
             label: 简介
             type: text
-      - name: areas
-        label: 研究方向卡片
-        type: object
-        list: true
-        fields:
-          - name: code
-            label: 编号
-            type: string
-          - name: slug
-            label: 锚点标识
-            type: string
-          - name: title
-            label: 标题
-            type: string
-          - name: description
-            label: 简介
-            type: text
-          - name: image
-            label: 配图
-            type: image
-            options:
-              path: site
-              extensions: [jpg, jpeg, png, webp]
-          - name: image_alt
-            label: 图片替代文本
-            type: string
-          - name: link
-            label: 跳转链接
-            type: string
-          - name: detail_intro
-            label: 详情区简介
-            type: text
-          - name: panels
-            label: 详情区面板
-            type: object
-            list: true
-            fields:
-              - name: title
-                label: 面板标题
-                type: string
-              - name: entries
-                label: 条目列表
-                type: text
-                list: true
 
-  - name: contact_content
-    label: 固定页-联系内容
+  - name: members_content
+    label: 团队成员页面文案
     type: file
-    path: _data/page_content/contact.yml
+    path: _data/page_content/members.yml
     fields:
       - name: masthead
         label: 页头
@@ -393,20 +445,48 @@ content:
           - name: intro
             label: 页面简介
             type: text
-      - name: cards
-        label: 联系卡片
+      - name: list
+        label: 列表页文案
         type: object
-        list: true
         fields:
-          - name: title
-            label: 卡片标题
+          - name: empty_text
+            label: 空状态文案
+            type: text
+          - name: placeholder_mark
+            label: 缺省头像文字
             type: string
-          - name: text
-            label: 卡片内容
+      - name: detail
+        label: 详情页文案
+        type: object
+        fields:
+          - name: kicker
+            label: 页头小标题
+            type: string
+          - name: back_link_text
+            label: 返回按钮文字
+            type: string
+
+  - name: courses_content
+    label: 课程与实验页面文案
+    type: file
+    path: _data/page_content/courses.yml
+    fields:
+      - name: masthead
+        label: 页头
+        type: object
+        fields:
+          - name: kicker
+            label: 顶部小标题
+            type: string
+          - name: title
+            label: 页面标题
+            type: string
+          - name: intro
+            label: 页面简介
             type: text
 
   - name: outputs_content
-    label: 固定页-项目与学术成果内容
+    label: 项目与学术成果页面文案
     type: file
     path: _data/page_content/outputs.yml
     fields:
@@ -500,160 +580,9 @@ content:
           - name: back_link_text
             label: 返回按钮文字
             type: string
-      - name: books
-        label: 书籍成果
-        type: object
-        list: true
-        fields:
-          - name: title
-            label: 书名
-            type: string
-          - name: authors
-            label: 作者
-            type: string
-          - name: publisher
-            label: 出版社
-            type: string
-          - name: year
-            label: 年份
-            type: string
-          - name: note
-            label: 说明
-            type: text
-      - name: highlights
-        label: 论文与归档说明
-        type: object
-        list: true
-        fields:
-          - name: title
-            label: 标题
-            type: string
-          - name: text
-            label: 说明
-            type: text
-
-  - name: news_content
-    label: 固定页-学术成果与动态内容
-    type: file
-    path: _data/page_content/news.yml
-    fields:
-      - name: masthead
-        label: 页头
-        type: object
-        fields:
-          - name: kicker
-            label: 顶部小标题
-            type: string
-          - name: title
-            label: 页面标题
-            type: string
-          - name: intro
-            label: 页面简介
-            type: text
-      - name: list
-        label: 列表页文案
-        type: object
-        fields:
-          - name: detail_link_text
-            label: 详情按钮文字
-            type: string
-          - name: empty_text
-            label: 空状态文案
-            type: text
-      - name: detail
-        label: 详情页文案
-        type: object
-        fields:
-          - name: kicker
-            label: 页头小标题
-            type: string
-          - name: published_label
-            label: 发布时间标签
-            type: string
-          - name: back_link_text
-            label: 返回按钮文字
-            type: string
-
-  - name: members_content
-    label: 固定页-成员内容
-    type: file
-    path: _data/page_content/members.yml
-    fields:
-      - name: masthead
-        label: 页头
-        type: object
-        fields:
-          - name: kicker
-            label: 顶部小标题
-            type: string
-          - name: title
-            label: 页面标题
-            type: string
-          - name: intro
-            label: 页面简介
-            type: text
-      - name: list
-        label: 列表页文案
-        type: object
-        fields:
-          - name: empty_text
-            label: 空状态文案
-            type: text
-          - name: placeholder_mark
-            label: 缺省头像文字
-            type: string
-      - name: detail
-        label: 详情页文案
-        type: object
-        fields:
-          - name: kicker
-            label: 页头小标题
-            type: string
-          - name: back_link_text
-            label: 返回按钮文字
-            type: string
-
-  - name: courses_content
-    label: 固定页-课程与实验内容
-    type: file
-    path: _data/page_content/courses.yml
-    fields:
-      - name: masthead
-        label: 页头
-        type: object
-        fields:
-          - name: kicker
-            label: 顶部小标题
-            type: string
-          - name: title
-            label: 页面标题
-            type: string
-          - name: intro
-            label: 页面简介
-            type: text
-      - name: cards
-        label: 课程卡片
-        type: object
-        list: true
-        fields:
-          - name: meta
-            label: 分类
-            type: string
-          - name: title
-            label: 标题
-            type: string
-          - name: label
-            label: 属性标签
-            type: string
-          - name: value
-            label: 属性内容
-            type: string
-          - name: text
-            label: 说明
-            type: text
 
   - name: site_content
-    label: 固定内容-页脚文案
+    label: 全站页脚文案
     type: file
     path: _data/page_content/site.yml
     fields:
