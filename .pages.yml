@@ -124,9 +124,60 @@ content:
       - name: value
         label: 属性内容
         type: string
+      - name: image
+        label: 封面图
+        type: image
+        options:
+          path: courses
+          extensions: [jpg, jpeg, png, webp]
+      - name: image_alt
+        label: 图片替代文本
+        type: string
+      - name: href
+        label: 外部链接
+        type: string
+      - name: institution
+        label: 建设单位
+        type: string
+      - name: instructor
+        label: 负责人
+        type: string
+      - name: category
+        label: 分类补充
+        type: string
+      - name: schedule
+        label: 开课/开放时间
+        type: string
+      - name: workload
+        label: 学习负荷
+        type: string
+      - name: certification
+        label: 课程认证/级别
+        type: string
+      - name: language
+        label: 语言
+        type: string
+      - name: keywords
+        label: 关键词
+        type: string
+      - name: resource_url
+        label: 资源链接
+        type: string
       - name: text
-        label: 说明
+        label: 列表简介
         type: text
+      - name: summary
+        label: 摘要
+        type: text
+      - name: outline
+        label: 内容结构
+        type: text
+      - name: body
+        label: 详情正文
+        type: rich-text
+        options:
+          path: courses
+          extensions: [jpg, jpeg, png, webp, gif]
 
   - name: projects
     label: 项目条目
@@ -188,9 +239,63 @@ content:
       - name: year
         label: 年份
         type: string
+      - name: cover
+        label: 封面图
+        type: image
+        options:
+          path: books
+          extensions: [jpg, jpeg, png, webp]
+      - name: cover_alt
+        label: 图片替代文本
+        type: string
+      - name: isbn
+        label: ISBN
+        type: string
+      - name: pages
+        label: 页数
+        type: string
+      - name: price
+        label: 定价
+        type: string
+      - name: link
+        label: 外部链接
+        type: string
       - name: note
-        label: 说明
+        label: 书籍介绍
         type: text
+
+  - name: news
+    label: 学术成果条目
+    type: collection
+    path: _news
+    format: yaml-frontmatter
+    subfolders: false
+    filename: "{primary}.md"
+    fields:
+      - name: title
+        label: 标题
+        type: string
+        required: true
+      - name: date
+        label: 发布时间
+        type: date
+        options:
+          format: yyyy-MM-dd
+      - name: cover
+        label: 封面图
+        type: image
+        options:
+          path: news
+          extensions: [jpg, jpeg, png, webp]
+      - name: summary
+        label: 摘要
+        type: text
+      - name: body
+        label: 正文
+        type: rich-text
+        options:
+          path: news
+          extensions: [jpg, jpeg, png, webp, gif]
 
   - name: output_highlights
     label: 成果说明条目
@@ -485,6 +590,48 @@ content:
             label: 页面简介
             type: text
 
+  - name: news_content
+    label: 学术成果页面文案
+    type: file
+    path: _data/page_content/news.yml
+    fields:
+      - name: masthead
+        label: 页头
+        type: object
+        fields:
+          - name: kicker
+            label: 顶部小标题
+            type: string
+          - name: title
+            label: 页面标题
+            type: string
+          - name: intro
+            label: 页面简介
+            type: text
+      - name: list
+        label: 列表页文案
+        type: object
+        fields:
+          - name: detail_link_text
+            label: 详情链接文字
+            type: string
+          - name: empty_text
+            label: 空状态文案
+            type: text
+      - name: detail
+        label: 详情页文案
+        type: object
+        fields:
+          - name: kicker
+            label: 页头小标题
+            type: string
+          - name: published_label
+            label: 发布时间标签
+            type: string
+          - name: back_link_text
+            label: 返回按钮文字
+            type: string
+
   - name: outputs_content
     label: 项目与学术成果页面文案
     type: file
@@ -608,4 +755,51 @@ content:
             type: string
           - name: about_link_text
             label: 关于链接文字
+            type: string
+
+  - name: contact_content
+    label: 联系方式页面文案
+    type: file
+    path: _data/page_content/contact.yml
+    fields:
+      - name: masthead
+        label: 页头
+        type: object
+        fields:
+          - name: kicker
+            label: 顶部小标题
+            type: string
+          - name: title
+            label: 页面标题
+            type: string
+          - name: intro
+            label: 页面简介
+            type: text
+      - name: cards
+        label: 联系卡片
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: 卡片标题
+            type: string
+          - name: text
+            label: 卡片内容
+            type: text
+
+  - name: navigation
+    label: 主导航
+    type: file
+    path: _data/navigation.yml
+    fields:
+      - name: main
+        label: 导航项
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: 名称
+            type: string
+          - name: url
+            label: 链接
             type: string
