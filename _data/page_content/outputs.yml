@@ -11,7 +11,7 @@ sections:
   books:
     kicker: Books
     title: 书籍成果
-    intro: 书籍成果统一收纳到本页，后续可继续增加专著、编著与译著条目。
+    intro: 书籍成果统一收纳到本页，当前已根据封面图补充专著、教程、译著与龙骨坡遗址系列成果，并同步展示封面与出版信息。
     authors_label: 作者
     publisher_label: 出版社
   publications:

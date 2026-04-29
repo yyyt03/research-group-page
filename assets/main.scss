@@ -2119,6 +2119,259 @@ $center-panel: #ffffff;
   color: $center-navy;
 }
 
+.card-visual {
+  aspect-ratio: 16 / 9;
+  display: block;
+  object-fit: cover;
+  width: 100%;
+}
+
+.card-visual--book {
+  aspect-ratio: 5 / 6;
+  background: #f4f5f7;
+  object-fit: contain;
+  padding: 18px;
+}
+
+.publication-grid--books {
+  align-items: stretch;
+}
+
+.publication-card--book {
+  height: 100%;
+}
+
+.card-stack {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px;
+}
+
+.publication-card--institutional {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+}
+
+.inline-label {
+  color: $center-navy;
+  display: inline;
+  font-size: inherit;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.section-link--compact {
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.page-shell--courses .wrapper {
+  max-width: 1360px;
+}
+
+.course-grid--institutional {
+  align-items: stretch;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.course-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.course-card__image {
+  aspect-ratio: 16 / 10;
+  background: #edf1f5;
+  display: block;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  padding: 12px;
+  width: 100%;
+}
+
+.course-card .member-card__body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.course-card .card-title {
+  font-size: 1.42rem;
+  line-height: 1.15;
+  margin-bottom: 4px;
+}
+
+.course-card .card-title a,
+.course-card .card-title a:visited {
+  color: $center-navy;
+  text-decoration: none;
+}
+
+.course-card .card-title a:hover,
+.course-card .card-title a:focus-visible {
+  color: $center-accent;
+}
+
+.course-card .member-card__body > p,
+.course-card .member-card__body .card-title {
+  margin: 0;
+}
+
+.course-card .card-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.course-card__summary {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  line-height: 1.72;
+  min-height: calc(1.72em * 3);
+  overflow: hidden;
+}
+
+.course-card__facts {
+  color: $center-muted;
+  font-size: 0.96rem;
+  line-height: 1.65;
+}
+
+.course-card__facts-label {
+  color: $center-navy;
+  font-weight: 700;
+}
+
+.course-card__badge {
+  align-items: center;
+  align-self: flex-start;
+  background: linear-gradient(180deg, #eef2f6 0%, #d9e0e8 100%);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.75),
+    0 6px 14px rgba(37, 53, 74, 0.12);
+  border-radius: 999px;
+  color: $center-navy;
+  display: inline-flex;
+  font-size: 0.82rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  padding: 8px 14px;
+}
+
+.course-card__action {
+  display: flex;
+  justify-content: center;
+  margin-top: auto !important;
+  padding-top: 14px;
+}
+
+.course-card .member-card__body > p.course-card__action {
+  margin-top: auto;
+}
+
+.course-card .member-card__body > p.course-card__action a,
+.course-card .member-card__body > p.course-card__action a:visited {
+  align-items: center;
+  background: $center-navy;
+  border-radius: 999px;
+  color: #fff !important;
+  display: inline-flex;
+  font-size: 0.95rem;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1;
+  min-height: 40px;
+  min-width: 152px;
+  padding: 0 24px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.course-card .member-card__body > p.course-card__action a:hover,
+.course-card .member-card__body > p.course-card__action a:focus-visible {
+  background: $center-accent;
+  color: #fff !important;
+}
+
+.project-card--institutional .card-title,
+.project-card--institutional .card-title a,
+.project-card--institutional .card-title a:visited {
+  color: $center-navy;
+}
+
+.project-card--institutional .card-title a:hover,
+.project-card--institutional .card-title a:focus-visible {
+  color: $center-accent;
+}
+
+.project-card--institutional .project-card__leader,
+.project-card--institutional > p {
+  margin: 0 0 10px;
+}
+
+.project-card--institutional > p:last-child {
+  margin-bottom: 0;
+}
+
+.project-card--institutional .project-card__leader .inline-label {
+  margin-right: 6px;
+}
+
+.publication-card--light .card-stack--compact {
+  gap: 10px;
+  height: 100%;
+  justify-content: center;
+}
+
+.publication-card--light .card-stack--compact .card-title,
+.publication-card--light .card-stack--compact p {
+  margin: 0;
+}
+
+.card-stack--preview {
+  gap: 12px;
+  height: 100%;
+}
+
+.card-stack--preview .card-meta,
+.card-stack--preview .card-title,
+.card-stack--preview p {
+  margin: 0;
+}
+
+.card-stack--preview .publication-card__link {
+  border-bottom: 0;
+  display: inline-flex;
+  margin-top: auto;
+  padding-bottom: 8px;
+  position: relative;
+  width: fit-content;
+}
+
+.card-stack--preview .publication-card__link::after {
+  background: $center-accent;
+  border-radius: 999px;
+  bottom: 0;
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
 .section-link {
   margin-top: 24px;
 }
@@ -2312,6 +2565,18 @@ $center-panel: #ffffff;
   object-position: center center;
 }
 
+.course-card .member-card__image.course-card__image {
+  aspect-ratio: 16 / 10;
+  background: #edf1f5;
+  display: block;
+  height: auto;
+  max-height: 360px;
+  object-fit: contain;
+  object-position: center center;
+  padding: 14px;
+  width: 100%;
+}
+
 .member-card--institutional .member-card__body {
   display: flex;
   flex: 1;
@@ -2365,15 +2630,48 @@ $center-panel: #ffffff;
   color: $center-accent;
 }
 
+/* Course cards reuse member-card markup, so reset the member-specific
+   nth-of-type paragraph styling that would otherwise stretch the badge. */
+.course-card .member-card__body > p:nth-of-type(2) {
+  color: inherit;
+  display: block;
+  -webkit-line-clamp: initial;
+  line-height: inherit;
+  min-height: 0;
+  overflow: visible;
+}
+
+.course-card .member-card__body > p.course-card__badge {
+  display: inline-flex;
+  line-height: 1;
+}
+
 @media (max-width: 900px) {
   .team-grid--institutional {
     gap: 20px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .course-grid--institutional {
+    gap: 20px;
+    grid-template-columns: 1fr;
+  }
+
   .member-card--institutional .member-card__image {
     aspect-ratio: 4 / 3;
     object-position: center center;
+  }
+
+  .course-card .member-card__image.course-card__image {
+    aspect-ratio: 16 / 10;
+    max-height: 320px;
+    object-fit: contain;
+    padding: 12px;
+  }
+
+  .course-card .member-card__body > p:nth-of-type(2) {
+    font-size: inherit;
+    min-height: 0;
   }
 }
 
@@ -2383,6 +2681,11 @@ $center-panel: #ffffff;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .course-grid--institutional {
+    gap: 14px;
+    grid-template-columns: 1fr;
+  }
+
   .member-card--institutional {
     border-radius: 16px;
   }
@@ -2390,6 +2693,13 @@ $center-panel: #ffffff;
   .member-card--institutional .member-card__image {
     aspect-ratio: 7 / 6;
     object-position: center center;
+  }
+
+  .course-card .member-card__image.course-card__image {
+    aspect-ratio: 16 / 10;
+    max-height: 280px;
+    object-fit: contain;
+    padding: 10px;
   }
 
   .member-card--institutional .member-card__body {
@@ -2421,6 +2731,12 @@ $center-panel: #ffffff;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+
+  .course-card .member-card__body > p:nth-of-type(2) {
+    font-size: inherit;
+    line-height: inherit;
+    min-height: 0;
+  }
 }
 
 @media (max-width: 420px) {
@@ -2429,9 +2745,20 @@ $center-panel: #ffffff;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .course-grid--institutional {
+    gap: 12px;
+  }
+
   .member-card--institutional .member-card__image {
     aspect-ratio: 7 / 6;
     object-position: center center;
+  }
+
+  .course-card .member-card__image.course-card__image {
+    aspect-ratio: 16 / 10;
+    max-height: 240px;
+    object-fit: contain;
+    padding: 8px;
   }
 
   .member-card--institutional .member-card__body {
@@ -2444,6 +2771,10 @@ $center-panel: #ffffff;
 
   .member-card--institutional .member-card__body > p:nth-of-type(2) {
     font-size: 0.86rem;
+  }
+
+  .course-card .member-card__body > p:nth-of-type(2) {
+    font-size: inherit;
   }
 }
 
@@ -3058,6 +3389,29 @@ a:active {
   color: #d9e3ee;
 }
 
+.lab-body[data-theme="dark"] .inline-label,
+.lab-body[data-theme="dark"] .course-card__facts-label,
+.lab-body[data-theme="dark"] .project-card__leader .inline-label {
+  color: #f4f8fc;
+}
+
+.lab-body[data-theme="dark"] .course-card__badge {
+  background: linear-gradient(180deg, #31465e 0%, #24384c 100%);
+  border-color: rgba(183, 202, 224, 0.28);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 8px 18px rgba(0, 0, 0, 0.24);
+  color: #edf4fb;
+}
+
+.lab-body[data-theme="dark"] .course-card__image {
+  background: #182536;
+}
+
+.lab-body[data-theme="dark"] .course-card .member-card__body > p.course-card__badge {
+  color: #edf4fb;
+}
+
 .lab-body[data-theme="dark"] .research-card--institutional .card-title,
 .lab-body[data-theme="dark"] .research-card--institutional .card-title a,
 .lab-body[data-theme="dark"] .publication-card--institutional .card-title,
@@ -3297,6 +3651,42 @@ a:active {
 }
 
 @media (max-width: 640px) {
+  .publication-grid--books {
+    gap: 12px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .publication-card--book {
+    border-radius: 16px;
+  }
+
+  .publication-card--book .card-visual--book {
+    aspect-ratio: 7 / 9;
+    padding: 10px;
+  }
+
+  .publication-card--book .card-stack {
+    gap: 6px;
+    padding: 14px 12px 16px;
+  }
+
+  .publication-card--book .card-title {
+    font-size: 1rem;
+    line-height: 1.24;
+    margin-bottom: 4px;
+  }
+
+  .publication-card--book .card-meta,
+  .publication-card--book .card-stack p {
+    font-size: 0.84rem;
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+  }
+
+  .publication-card--book .book-card__note {
+    display: none;
+  }
+
   .about-grid--institutional:not(.about-grid--detail) .media-stack {
     background: #eef2f7;
     border-radius: 18px;
@@ -3323,5 +3713,30 @@ a:active {
 
   .detail-section__panel {
     padding: 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .publication-grid--books {
+    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .publication-card--book .card-visual--book {
+    aspect-ratio: 7 / 9;
+    padding: 8px;
+  }
+
+  .publication-card--book .card-stack {
+    padding: 12px 10px 14px;
+  }
+
+  .publication-card--book .card-title {
+    font-size: 0.94rem;
+  }
+
+  .publication-card--book .card-meta,
+  .publication-card--book .card-stack p {
+    font-size: 0.8rem;
   }
 }

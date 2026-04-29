@@ -86,10 +86,12 @@ permalink: /
       <div class="publication-grid publication-grid--institutional publication-grid--light">
         {% for item in home.output_preview.cards %}
         <article class="publication-card publication-card--institutional publication-card--light">
-          <p class="card-meta">{{ item.meta }}</p>
-          <h3 class="card-title">{{ item.title }}</h3>
-          <p>{{ item.text }}</p>
-          <a class="publication-card__link publication-card__link--light" href="{{ item.link | relative_url }}">{{ item.link_text }}</a>
+          <div class="card-stack card-stack--preview">
+            <p class="card-meta">{{ item.meta }}</p>
+            <h3 class="card-title">{{ item.title }}</h3>
+            <p>{{ item.text }}</p>
+            <a class="publication-card__link publication-card__link--light" href="{{ item.link | relative_url }}">{{ item.link_text }}</a>
+          </div>
         </article>
         {% endfor %}
       </div>

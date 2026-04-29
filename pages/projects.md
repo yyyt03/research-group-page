@@ -29,7 +29,7 @@ permalink: /projects/
         <article class="project-card project-card--institutional">
           <p class="card-meta">{{ project.period }}</p>
           <h3 class="card-title"><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
-          <p><strong>{{ outputs.sections.projects.leader_label }}</strong> {{ project.leader }}</p>
+          <p class="project-card__leader"><span class="inline-label">{{ outputs.sections.projects.leader_label }}</span> {{ project.leader }}</p>
           <p>{{ project.summary }}</p>
         </article>
         {% endfor %}
@@ -45,14 +45,19 @@ permalink: /projects/
         <p class="section-intro section-intro--narrow">{{ outputs.sections.books.intro }}</p>
       </div>
 
-      <div class="publication-grid publication-grid--institutional publication-grid--light">
+      <div class="publication-grid publication-grid--institutional publication-grid--light publication-grid--books">
         {% for book in books %}
-        <article class="publication-card publication-card--institutional publication-card--light">
+        <article class="publication-card publication-card--institutional publication-card--light publication-card--book">
+          {% if book.cover %}
+          <img class="card-visual card-visual--book" src="{{ book.cover | relative_url }}" alt="{{ book.cover_alt | default: book.title }}">
+          {% endif %}
+          <div class="card-stack">
           <p class="card-meta">{{ book.year }}</p>
           <h3 class="card-title">{{ book.title }}</h3>
-          <p><strong>{{ outputs.sections.books.authors_label }}</strong> {{ book.authors }}</p>
-          <p><strong>{{ outputs.sections.books.publisher_label }}</strong> {{ book.publisher }}</p>
-          <p>{{ book.note }}</p>
+          <p><span class="inline-label">{{ outputs.sections.books.authors_label }}</span> {{ book.authors }}</p>
+          <p><span class="inline-label">{{ outputs.sections.books.publisher_label }}</span> {{ book.publisher }}</p>
+          <p class="book-card__note">{{ book.note }}</p>
+          </div>
         </article>
         {% endfor %}
       </div>
@@ -70,8 +75,10 @@ permalink: /projects/
       <div class="publication-grid publication-grid--institutional publication-grid--light">
         {% for item in output_highlights %}
         <article class="publication-card publication-card--institutional publication-card--light">
-          <h3 class="card-title">{{ item.title }}</h3>
-          <p>{{ item.text }}</p>
+          <div class="card-stack card-stack--compact">
+            <h3 class="card-title">{{ item.title }}</h3>
+            <p>{{ item.text }}</p>
+          </div>
         </article>
         {% endfor %}
       </div>
