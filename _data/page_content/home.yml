@@ -41,7 +41,7 @@ output_preview:
       link_text: 查看项目与成果
       link: /projects/
 members_section:
-  kicker: 团队成员
+  kicker: MEMBERS
   title: 团队成员
   intro: 首页展示课题组教师与学生成员入口，完整名单与个人资料可在成员栏目中继续查看。
   more_link_text: 查看全部成员
