@@ -12,7 +12,7 @@ hero:
   secondary_button_text: 关于我们
   secondary_button_link: /about/
 intro:
-  kicker: 关于我们
+  kicker: ABOUT
   title: 关于我们
   paragraphs:
     - 石器技术实验室以李英华教授及其课题组为核心，围绕石器技术研究、汉水流域与长江中游史前人类的石器技术与行为研究、华南与东南亚古人类的技术与行为研究等主题持续展开工作。
@@ -21,7 +21,7 @@ intro:
   image: /assets/uploads/docx-tl-homepage-0326/figure-04.jpeg
   image_alt: 首页 About 区块配图
 output_preview:
-  kicker: 项目与学术成果
+  kicker: Projects & Academic Achievements
   title: 项目与学术成果
   intro: 集中展示课题组代表性科研项目、书籍成果与论文归档，形成对外展示与学术检索兼顾的成果入口。
   cards:
