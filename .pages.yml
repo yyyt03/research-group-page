@@ -205,6 +205,25 @@ content:
               - name: link
                 label: 跳转链接
                 type: string
+      - name: members_section
+        label: 首页成员区块
+        type: object
+        fields:
+          - name: kicker
+            label: 小标题
+            type: string
+          - name: title
+            label: 标题
+            type: string
+          - name: intro
+            label: 简介
+            type: text
+          - name: more_link_text
+            label: 更多按钮文字
+            type: string
+          - name: placeholder_mark
+            label: 缺省头像文字
+            type: string
       - name: contact_section
         label: 联系区块
         type: object
@@ -340,6 +359,21 @@ content:
           - name: link
             label: 跳转链接
             type: string
+          - name: detail_intro
+            label: 详情区简介
+            type: text
+          - name: panels
+            label: 详情区面板
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: 面板标题
+                type: string
+              - name: entries
+                label: 条目列表
+                type: text
+                list: true
 
   - name: contact_content
     label: 固定页-联系内容
@@ -389,6 +423,83 @@ content:
           - name: intro
             label: 页面简介
             type: text
+      - name: sections
+        label: 页面分区文案
+        type: object
+        fields:
+          - name: projects
+            label: 项目分区
+            type: object
+            fields:
+              - name: kicker
+                label: 顶部小标题
+                type: string
+              - name: title
+                label: 标题
+                type: string
+              - name: intro
+                label: 简介
+                type: text
+              - name: leader_label
+                label: 负责人标签
+                type: string
+          - name: books
+            label: 书籍分区
+            type: object
+            fields:
+              - name: kicker
+                label: 顶部小标题
+                type: string
+              - name: title
+                label: 标题
+                type: string
+              - name: intro
+                label: 简介
+                type: text
+              - name: authors_label
+                label: 作者标签
+                type: string
+              - name: publisher_label
+                label: 出版社标签
+                type: string
+          - name: publications
+            label: 论文入口分区
+            type: object
+            fields:
+              - name: kicker
+                label: 顶部小标题
+                type: string
+              - name: title
+                label: 标题
+                type: string
+              - name: intro
+                label: 简介
+                type: text
+              - name: link_text
+                label: 跳转按钮文字
+                type: string
+              - name: link_url
+                label: 跳转链接
+                type: string
+      - name: detail
+        label: 项目详情页文案
+        type: object
+        fields:
+          - name: project_kicker
+            label: 页头小标题
+            type: string
+          - name: period_label
+            label: 周期标签
+            type: string
+          - name: status_label
+            label: 状态标签
+            type: string
+          - name: leader_label
+            label: 负责人标签
+            type: string
+          - name: back_link_text
+            label: 返回按钮文字
+            type: string
       - name: books
         label: 书籍成果
         type: object
@@ -420,3 +531,152 @@ content:
           - name: text
             label: 说明
             type: text
+
+  - name: news_content
+    label: 固定页-学术成果与动态内容
+    type: file
+    path: _data/page_content/news.yml
+    fields:
+      - name: masthead
+        label: 页头
+        type: object
+        fields:
+          - name: kicker
+            label: 顶部小标题
+            type: string
+          - name: title
+            label: 页面标题
+            type: string
+          - name: intro
+            label: 页面简介
+            type: text
+      - name: list
+        label: 列表页文案
+        type: object
+        fields:
+          - name: detail_link_text
+            label: 详情按钮文字
+            type: string
+          - name: empty_text
+            label: 空状态文案
+            type: text
+      - name: detail
+        label: 详情页文案
+        type: object
+        fields:
+          - name: kicker
+            label: 页头小标题
+            type: string
+          - name: published_label
+            label: 发布时间标签
+            type: string
+          - name: back_link_text
+            label: 返回按钮文字
+            type: string
+
+  - name: members_content
+    label: 固定页-成员内容
+    type: file
+    path: _data/page_content/members.yml
+    fields:
+      - name: masthead
+        label: 页头
+        type: object
+        fields:
+          - name: kicker
+            label: 顶部小标题
+            type: string
+          - name: title
+            label: 页面标题
+            type: string
+          - name: intro
+            label: 页面简介
+            type: text
+      - name: list
+        label: 列表页文案
+        type: object
+        fields:
+          - name: empty_text
+            label: 空状态文案
+            type: text
+          - name: placeholder_mark
+            label: 缺省头像文字
+            type: string
+      - name: detail
+        label: 详情页文案
+        type: object
+        fields:
+          - name: kicker
+            label: 页头小标题
+            type: string
+          - name: back_link_text
+            label: 返回按钮文字
+            type: string
+
+  - name: courses_content
+    label: 固定页-课程与实验内容
+    type: file
+    path: _data/page_content/courses.yml
+    fields:
+      - name: masthead
+        label: 页头
+        type: object
+        fields:
+          - name: kicker
+            label: 顶部小标题
+            type: string
+          - name: title
+            label: 页面标题
+            type: string
+          - name: intro
+            label: 页面简介
+            type: text
+      - name: cards
+        label: 课程卡片
+        type: object
+        list: true
+        fields:
+          - name: meta
+            label: 分类
+            type: string
+          - name: title
+            label: 标题
+            type: string
+          - name: label
+            label: 属性标签
+            type: string
+          - name: value
+            label: 属性内容
+            type: string
+          - name: text
+            label: 说明
+            type: text
+
+  - name: site_content
+    label: 固定内容-页脚文案
+    type: file
+    path: _data/page_content/site.yml
+    fields:
+      - name: footer
+        label: 页脚
+        type: object
+        fields:
+          - name: intro_text
+            label: 页脚简介
+            type: text
+          - name: nav_heading
+            label: 导航标题
+            type: string
+          - name: keywords_heading
+            label: 关键词标题
+            type: string
+          - name: keywords
+            label: 关键词
+            type: string
+            list: true
+          - name: contact_link_text
+            label: 联系链接文字
+            type: string
+          - name: about_link_text
+            label: 关于链接文字
+            type: string

@@ -99,10 +99,10 @@ permalink: /
     <div class="wrapper">
       <div class="section-header section-header--split">
         <div>
-          <p class="section-kicker">团队成员</p>
-          <h2 class="section-title section-title--left">团队成员</h2>
+          <p class="section-kicker">{{ home.members_section.kicker }}</p>
+          <h2 class="section-title section-title--left">{{ home.members_section.title }}</h2>
         </div>
-        <p class="section-intro section-intro--narrow">首页展示课题组教师与学生成员入口，完整名单与个人资料可在成员栏目中继续查看。</p>
+        <p class="section-intro section-intro--narrow">{{ home.members_section.intro }}</p>
       </div>
 
       {% assign members = site.members | sort: "order" %}
@@ -113,7 +113,7 @@ permalink: /
           {% if member.photo %}
           <img class="member-card__image" src="{{ member.photo | relative_url }}" alt="{{ member.name }}">
           {% else %}
-          <div class="member-card__image member-card__image--placeholder">TL</div>
+          <div class="member-card__image member-card__image--placeholder">{{ home.members_section.placeholder_mark }}</div>
           {% endif %}
           <div class="member-card__body">
             <p class="card-meta">{{ member.role }}</p>
@@ -123,7 +123,7 @@ permalink: /
         </article>
         {% endfor %}
       </div>
-      <p class="section-link"><a href="{{ '/members/' | relative_url }}">查看全部成员</a></p>
+      <p class="section-link"><a href="{{ '/members/' | relative_url }}">{{ home.members_section.more_link_text }}</a></p>
       {% endif %}
     </div>
   </section>

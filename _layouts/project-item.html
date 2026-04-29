@@ -1,15 +1,16 @@
 ---
 layout: default
 ---
+{% assign outputs = site.data.page_content.outputs %}
 <article class="page-shell detail-shell detail-shell--project institution-detail-shell">
   <div class="wrapper">
     <header class="detail-hero institution-detail__summary">
-      <p class="section-kicker">项目介绍</p>
+      <p class="section-kicker">{{ outputs.detail.project_kicker }}</p>
       <h1 class="section-title section-title--left">{{ page.title }}</h1>
       <div class="detail-meta detail-meta--project">
-        {% if page.period %}<span class="detail-chip">周期 {{ page.period }}</span>{% endif %}
-        {% if page.status %}<span class="detail-chip">状态 {{ page.status }}</span>{% endif %}
-        {% if page.leader %}<span class="detail-chip">负责人 {{ page.leader }}</span>{% endif %}
+        {% if page.period %}<span class="detail-chip">{{ outputs.detail.period_label }} {{ page.period }}</span>{% endif %}
+        {% if page.status %}<span class="detail-chip">{{ outputs.detail.status_label }} {{ page.status }}</span>{% endif %}
+        {% if page.leader %}<span class="detail-chip">{{ outputs.detail.leader_label }} {{ page.leader }}</span>{% endif %}
       </div>
       {% if page.summary %}
       <p class="detail-summary">{{ page.summary }}</p>
@@ -20,6 +21,6 @@ layout: default
       {{ content }}
     </section>
 
-    <p class="detail-back"><a href="{{ '/projects/' | relative_url }}">返回项目列表</a></p>
+    <p class="detail-back"><a href="{{ '/projects/' | relative_url }}">{{ outputs.detail.back_link_text }}</a></p>
   </div>
 </article>

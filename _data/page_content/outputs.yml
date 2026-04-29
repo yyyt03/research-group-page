@@ -2,6 +2,30 @@ masthead:
   kicker: Projects & Output
   title: 项目与学术成果
   intro: 本页集中整理课题组项目、书籍成果，并将论文与学位论文入口统一收束到研究领域页按方向查看。
+sections:
+  projects:
+    kicker: Projects
+    title: 项目
+    intro: 当前已录入国家社科基金、教育部基金及校内项目条目，每个项目可继续下钻查看摘要。
+    leader_label: 负责人
+  books:
+    kicker: Books
+    title: 书籍成果
+    intro: 书籍成果统一收纳到本页，后续可继续增加专著、编著与译著条目。
+    authors_label: 作者
+    publisher_label: 出版社
+  publications:
+    kicker: Publications
+    title: 论文与学位论文入口
+    intro: “Publication 数据结构”已按研究方向拆成统一入口，避免在成果页重复堆叠长列表。
+    link_text: 前往研究领域页查看完整论文与学位论文清单
+    link_url: /research/
+detail:
+  project_kicker: 项目介绍
+  period_label: 周期
+  status_label: 状态
+  leader_label: 负责人
+  back_link_text: 返回项目列表
 books:
   - title: 旧石器技术
     authors: 李英华

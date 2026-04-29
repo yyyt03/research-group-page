@@ -40,6 +40,12 @@ output_preview:
       text: 按研究方向梳理论文与学位论文，便于从主题维度快速检索相关学术产出。
       link_text: 查看项目与成果
       link: /projects/
+members_section:
+  kicker: 团队成员
+  title: 团队成员
+  intro: 首页展示课题组教师与学生成员入口，完整名单与个人资料可在成员栏目中继续查看。
+  more_link_text: 查看全部成员
+  placeholder_mark: TL
 contact_section:
   kicker: Contact
   title: 联系方式

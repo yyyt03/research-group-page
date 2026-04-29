@@ -1,0 +1,10 @@
+masthead:
+  kicker: People
+  title: 团队成员
+  intro: 成员页面集中展示课题组核心教师与学生成员，当前保留李英华教师主页，并以 mock 学生资料补齐其余展示位，后续可继续替换为真实学生与合作成员信息。
+list:
+  empty_text: 当前还没有成员信息。
+  placeholder_mark: TL
+detail:
+  kicker: 团队成员
+  back_link_text: 返回团队成员

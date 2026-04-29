@@ -1,0 +1,11 @@
+masthead:
+  kicker: Publications & Updates
+  title: 学术成果
+  intro: 当前页面以成果条目与研究更新为主，保持统一摘要卡片结构，后续如有需要可再独立拆分 publications 数据结构。
+list:
+  detail_link_text: 查看详情
+  empty_text: 当前还没有学术成果内容。
+detail:
+  kicker: 学术成果
+  published_label: 发布时间
+  back_link_text: 返回学术成果

@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+{% assign members_page = site.data.page_content.members %}
 <article class="page-shell page-shell--member-detail institution-detail-shell">
   <div class="wrapper">
     <section class="member-detail institution-detail">
@@ -12,7 +13,7 @@ layout: default
         {% endif %}
 
         <header class="member-detail__summary institution-detail__summary">
-          <p class="section-kicker">团队成员</p>
+          <p class="section-kicker">{{ members_page.detail.kicker }}</p>
           <h1 class="member-detail__name">{{ page.name }}</h1>
           {% if page.role %}
           <p class="member-detail__role">{{ page.role }}</p>
@@ -30,7 +31,7 @@ layout: default
         </section>
       </div>
 
-      <p class="detail-back"><a href="{{ '/members/' | relative_url }}">返回团队成员</a></p>
+      <p class="detail-back"><a href="{{ '/members/' | relative_url }}">{{ members_page.detail.back_link_text }}</a></p>
     </section>
   </div>
 </article>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: 'zh-CN' }}">
   {%- include head.html -%}
+  {% assign site_page = site.data.page_content.site %}
   <body class="lab-body{% if page.url == '/' %} lab-body--home{% endif %}" data-theme="light">
     {%- include header.html -%}
 
@@ -13,10 +14,10 @@
         <section class="site-footer-lab__intro">
           <p class="site-footer-lab__kicker">{{ site.subtitle }}</p>
           <h2 class="footer-brand">{{ site.title }}</h2>
-          <p class="footer-copy">我们致力于通过技术学分析、三维重建手段，解读旧石器时代古人类的技术与生活，重建史前人类的生存图景。</p>
+          <p class="footer-copy">{{ site_page.footer.intro_text }}</p>
         </section>
         <section>
-          <h3 class="footer-heading">栏目导航</h3>
+          <h3 class="footer-heading">{{ site_page.footer.nav_heading }}</h3>
           <ul class="footer-links">
             {% for item in site.data.navigation.main %}
             <li><a class="{% if page.url == item.url %}is-current{% endif %}" href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
@@ -24,20 +25,19 @@
           </ul>
         </section>
         <section>
-          <h3 class="footer-heading">研究关键词</h3>
+          <h3 class="footer-heading">{{ site_page.footer.keywords_heading }}</h3>
           <ul class="footer-links footer-links--plain">
-            <li>石器技术研究</li>
-            <li>三维重建</li>
-            <li>区域比较研究</li>
-            <li>国际合作</li>
+            {% for keyword in site_page.footer.keywords %}
+            <li>{{ keyword }}</li>
+            {% endfor %}
           </ul>
         </section>
       </div>
       <div class="wrapper footer-bottom">
         <p>&copy; 2026 {{ site.title }}. All rights reserved.</p>
         <div class="footer-bottom__links">
-          <a href="mailto:lyhfrance2005@yahoo.fr">联系邮箱</a>
-          <a class="{% if page.url == '/about/' %}is-current{% endif %}" href="{{ '/about/' | relative_url }}">关于我们</a>
+          <a href="mailto:lyhfrance2005@yahoo.fr">{{ site_page.footer.contact_link_text }}</a>
+          <a class="{% if page.url == '/about/' %}is-current{% endif %}" href="{{ '/about/' | relative_url }}">{{ site_page.footer.about_link_text }}</a>
         </div>
       </div>
     </footer>

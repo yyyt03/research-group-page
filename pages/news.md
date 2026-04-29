@@ -3,12 +3,13 @@ layout: default
 title: 新闻
 permalink: /news/
 ---
+{% assign news_page = site.data.page_content.news %}
 <section class="page-shell page-shell--institutional">
   <div class="wrapper">
     <header class="page-masthead">
-      <p class="section-kicker">Publications & Updates</p>
-      <h1 class="section-title section-title--left">学术成果</h1>
-      <p class="section-intro section-intro--wide">当前页面以成果条目与研究更新为主，保持统一摘要卡片结构，后续如有需要可再独立拆分 publications 数据结构。</p>
+      <p class="section-kicker">{{ news_page.masthead.kicker }}</p>
+      <h1 class="section-title section-title--left">{{ news_page.masthead.title }}</h1>
+      <p class="section-intro section-intro--wide">{{ news_page.masthead.intro }}</p>
     </header>
 
     {% assign news_list = site.news | sort: "date" | reverse %}
@@ -19,12 +20,12 @@ permalink: /news/
         <p class="publication-card__journal">{{ item.date | date: "%Y-%m-%d" }}</p>
         <h2 class="card-title"><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h2>
         <p>{{ item.summary }}</p>
-        <a class="publication-card__link" href="{{ item.url | relative_url }}">查看详情</a>
+        <a class="publication-card__link" href="{{ item.url | relative_url }}">{{ news_page.list.detail_link_text }}</a>
       </article>
     {% endfor %}
     </div>
     {% else %}
-    <p>当前还没有学术成果内容。</p>
+    <p>{{ news_page.list.empty_text }}</p>
     {% endif %}
   </div>
 </section>
