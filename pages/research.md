@@ -35,7 +35,7 @@ permalink: /research/
         </div>
         <p class="section-intro section-intro--narrow">揭示我国旧石器工业内部及工业之间的多样性，探索它们与世界其他地区石器工业的共性及差异性。</p>
       </div>
-      <img class="detail-section__image" src="/assets/uploads/docx-tl-homepage-0326/figure-07.jpeg" alt="石器技术研究配图">
+      <img class="detail-section__image" src="{{ '/assets/uploads/docx-tl-homepage-0326/figure-07.jpeg' | relative_url }}" alt="石器技术研究配图">
 
       <div class="detail-section__panel">
         <h3>期刊论文</h3>
@@ -80,7 +80,7 @@ permalink: /research/
         </div>
         <p class="section-intro section-intro--narrow">围绕汉水流域与长江中游材料，梳理技术演化、遗址序列与远古人类行为模式。</p>
       </div>
-      <img class="detail-section__image" src="/assets/uploads/docx-tl-homepage-0326/figure-08.png" alt="汉水流域与长江中游研究配图">
+      <img class="detail-section__image" src="{{ '/assets/uploads/docx-tl-homepage-0326/figure-08.png' | relative_url }}" alt="汉水流域与长江中游研究配图">
 
       <div class="detail-section__panel">
         <h3>期刊论文</h3>
@@ -117,7 +117,7 @@ permalink: /research/
         </div>
         <p class="section-intro section-intro--narrow">结合华南与东南亚的遗址和器物材料，讨论技术传统、区域联系与文化变迁。</p>
       </div>
-      <img class="detail-section__image" src="/assets/uploads/docx-tl-homepage-0326/figure-09.jpeg" alt="华南与东南亚研究配图">
+      <img class="detail-section__image" src="{{ '/assets/uploads/docx-tl-homepage-0326/figure-09.jpeg' | relative_url }}" alt="华南与东南亚研究配图">
 
       <div class="detail-section__panel">
         <h3>期刊论文</h3>

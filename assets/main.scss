@@ -192,7 +192,7 @@ h6 {
   align-items: center;
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.7)),
-    url("/assets/uploads/site/hero-bg.png");
+    url("{{ '/assets/uploads/site/hero-bg.png' | relative_url }}");
   background-position: center;
   background-size: cover;
   color: $lab-white;
@@ -1895,7 +1895,7 @@ $center-panel: #ffffff;
   align-items: end;
   background-image:
     linear-gradient(90deg, rgba(19, 29, 41, 0.78) 0%, rgba(19, 29, 41, 0.58) 44%, rgba(19, 29, 41, 0.34) 100%),
-    url("/assets/uploads/site/hero-bg.png");
+    url("{{ '/assets/uploads/site/hero-bg.png' | relative_url }}");
   min-height: min(82vh, 760px);
   padding: 72px 0 64px;
   text-align: left;
